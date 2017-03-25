@@ -1,0 +1,32 @@
+---
+title: "Oficina de R"
+author: "Nathan Giachetta\n Rafael Coelho"
+subtitle: "Semana de Ciências Sociais"
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fonttheme: structurebold
+    theme: CambridgeUS
+---
+
+#Introdução
+
+## Objetivos
+
+Nosso objetivo é apresentar a linguagem de programação R para estudantes da graduação em Ciências Sociais da Universidade de São Paulo.
+
+Acreditamos que ao ter um primeiro contato com a programação, o estudante poderá se sentir mais confiante em buscar novos conhecimentos dentro desta ou de outras linguagens.
+
+# O que iremos aprender?
+
+Não trabalharemos aqui com análise de dados ou programação avançada. Iremos englobar assuntos básicos entre eles: [Temos que pensar o tempo da oficina]
+
+- Ambiente do R; 
+
+- Tipos de variáveis;
+
+- Estrutura dos dados;
+
+- Controladores de Fluxos;
+
+- Funções.
