@@ -1,6 +1,6 @@
 ---
 title: "Oficina de R"
-author: "Nathan Giachetta\n Rafael Coelho"
+author: "Nathan Giachetta & Rafael Coelho"
 subtitle: "Semana de Ciências Sociais"
 output:
   beamer_presentation:
