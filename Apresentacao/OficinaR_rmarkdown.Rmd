@@ -30,3 +30,23 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 - Controladores de Fluxos;
 
 - Funções.
+
+# 1. Ambiente do R
+
+- Linguagem de programação.
+
+- Software livre e Comunidade.
+
+# 2. Tipos de Variáveis
+
+- Float
+
+- Boolean
+
+- Factor
+
+# 3. Estrutura dos Dados
+
+- Lista
+
+- Vetores
