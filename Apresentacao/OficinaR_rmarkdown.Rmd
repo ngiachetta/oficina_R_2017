@@ -45,6 +45,8 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 - Boolean
 
+- Character
+
 - Factor
 
 # 3. Estrutura dos Dados
@@ -62,3 +64,7 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 - Loops com *while*
 
 - Repetição com *for*
+
+# 5. Funções
+
+- O que é uma função no R?
