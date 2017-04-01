@@ -41,6 +41,8 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 - Float
 
+- Double
+
 - Boolean
 
 - Factor
@@ -50,3 +52,5 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 - Lista
 
 - Vetores
+
+- Data Frame
