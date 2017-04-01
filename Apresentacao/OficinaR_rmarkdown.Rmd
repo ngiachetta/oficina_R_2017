@@ -54,3 +54,11 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 - Vetores
 
 - Data Frame
+
+# 4. Controladores de Fluxo
+
+- Condicionais com *if*
+
+- Loops com *while*
+
+- Repetição com *for*
