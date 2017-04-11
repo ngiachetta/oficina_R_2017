@@ -1,4 +1,5 @@
 #Manipulando o banco de dados do MoMA para que a oficina fique mais didática
+#O Dataset a seguir foi extraido da seguinte fonte: https://github.com/MuseumofModernArt/collection
 
 library(dplyr)
 setwd("C:\\Users\\Nathan\\Desktop\\OFICINA\\oficina_R_2017\\oficina_R_2017\\Material")
