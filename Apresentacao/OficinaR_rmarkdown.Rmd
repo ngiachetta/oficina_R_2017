@@ -37,13 +37,13 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 - Software livre e Comunidade.
 
-#1.1. O Console
+## 1.1. O Console
 
 - O R é operado por meio de um **terminal**
 
 ![](terminal_r.png)
 
-#1.2. O RStudio
+## 1.2. O RStudio
 
 - Interface Gráfica para o R
 
@@ -69,19 +69,19 @@ Interface RStudio: ![](rstudio.png)
 
 - Factor
 
-#2.1. Float
+## 2.1. Float
 
 As variáveis de tipo float represetam os números **decimais**
 
-#2.2. Double
+## 2.2. Double
 
-#2.3. Boolean
+## 2.3. Boolean
 
 - Variável com dois valores: FALSE (0), TRUE (1)
 
 - Usadas para **controle de fluxo**.
 
-#2.3.1. Operações Booleanas
+## 2.3.1. Operações Booleanas
 
 - Duas operações básicas: **and**(e) e **or** (ou).
 
@@ -99,11 +99,11 @@ FALSE | FALSE | FALSE  |
 TRUE  | TRUE  | TRUE  |
 FALSE | TRUE | FALSE  |
 
-#2.4. Character
+## 2.4. Character
 
 - A variável *string* do R. 
 
-#2.5. Factor
+## 2.5. Factor
 
 - Variável categórica do R.
 
