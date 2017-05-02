@@ -9,7 +9,7 @@ output:
     theme: CambridgeUS
 ---
 
-#Introdução
+# Introdução
 
 ## Objetivos
 
@@ -121,11 +121,152 @@ FALSE | TRUE | FALSE  |
 
 # 4. Controladores de Fluxo
 
-- Condicionais com *if*
+Para essa seção iremos utilizar um banco de dados do Museu de Arte Moderna de Nova York (MoMa), porém, como conseguiremos extrair estes dados? Simples, no [github](https://github.com/) existe um repositório com as [coleções do Museu](https://github.com/MuseumofModernArt/collection). Para extrair estes dados, vamos utilizar a função `read.csv()`.
+```{r}
+moma <- read.csv ("https://raw.githubusercontent.com/ngiachetta/oficina_R_2017/master/Material/MOMA_Oficina.csv",  header = TRUE, sep = ";", stringsAsFactors = FALSE)
+```
 
-- Loops com *while*
+## 4.1 condições com o if
 
-- Repetição com *for*
+Vamos verificar como funciona um _condicional_, ou também chamado de _if_. Podemos pensar da seguinte forma: "Se algo for Verdade, então faça isso". Muitas vezes ele é utilizado com outro comando, o  _else_, que significa: "... Caso negativo, faça isso"
+
+```{r}
+if(<condicao>){
+  <comando1>
+  <comando2>
+  <etc>
+}else{
+  <comando1>
+  <comando2>
+  <etc>
+}
+```
+
+Vejamos então o exemplo abaixo:
+if: O if a seguir aceita apenas um valor lógico como argumento.
+
+```{r}
+if (moma$Nationality[2] == "American") {
+  print ("A observação é americana")
+} else {
+  print ("A observação não é americana")
+}
+
+#Par ou ímpar
+numero = 12323
+if (numero %% 2 ==  0) {
+  paste0 (numero, " é par", collapse = " ")
+} else {
+  paste0 (numero, " é ímpar", collapse = " ")
+}
+```
+
+Percebam que o comando _if_ realiza a condição apenas para casos não vetorizados. Se, por exemplo, nosso intuito fosse classificar se todas as nossas 100.410 observações fossem americanos ou não, o if não seria a melhor opção, pois ele não consegue percorrer todo vetor. Para isso temos o _ifelse_,que veremos no fim desta seção.
+
+## 4.2 Loops com o for
+
+E se nós quisessemos percorrer os primeiros 10 valores da coluna nacionalida do nosso banco de dados? Uma das soluções para isso é usar o for!
+
+```{r}
+for (i in 1:10){
+  print(moma$Nationality[i])
+}
+```
+
+Nós lemos o for da seguinte maneira: Para cada valor "i" presente na sequência "x", realize tais comandos.
+
+```{r}
+for (i in x){
+  <comando1>
+  <comando2>
+}
+```
+
+Vamos ver mais um exemplo:
+
+```{r}
+for (i in 1:10){
+  print(moma$Artist[i])
+  print(moma$Classification[i])
+}
+```
+É muito importante tomar cuidado com os símbolos que vocês colocam nos valores para realizar os loops. Se colocarmos símbolos em já existentes, o R vai sobreescrever o objeto existente com o que nós criamos.
+
+## 4.3 Loops com o while
+
+O while retorna um comando até que a condição continuar verdadeira.
+
+```{r}
+while (<condicao>){
+  <comando1>
+  <comando2>
+}
+```
+
+Parecido com os anteriores, não? A principal diferença do while é devido ao fato de que ele continuará executando o comando até que a condição se torne falsa. Vamos ver o seguinte exemplo:
+
+```{r}
+l <- 0
+while (l <= 20){
+  print(moma$DateAcquired[l])
+  l = l + 1
+}
+```
+
+Mas o que aconteceu acima? O comando acima pode ser "traduzido" da seguinte maneira: Enquanto l for menor que 20, execute o comando 1 e o comando 2. Ajudou? Não? 
+
+Nós começamos nosso código atribuindo um valor para um objeto. Esse objeto, quando utilizamos o while, chama-se *iterador*, ele vai permitir que nosso código comece a andar. Perceba que nosso segundo comando adiciona o valor 1 no nosso objeto, isso vai ajudar o nosso iterador chegar até um valor cuja condição se torna falsa. Portanto, começamos com o iterador valendo 0 e terminamos com ele valendo 21.
+
+## 4.4 Podemos usar os controladores de fluxo em conjunto?
+
+Aprender como utilizar os Controladores de fluxo nos ajuda bastante em automatizar tarefas, utilizá-los em conjunto ajuda ainda mais.
+
+Vamos olhar a variável **artist_age**, ela tem a idade dos autores das obras. Algumas observações têm valores negativos, isso significa que eles ainda estão vivos pois a variável foi construída pegando a diferença entre a idade do falecimento e a idade de nascimento. Que tal verificarmos quem está vivo e quem faleceu? Além disso, vamos verificar qual a idade daqueles que estão vivos?
+
+### 4.4.1 while e if
+
+```{r}
+m <- 1
+while (m <= nrow(moma)){
+  if (moma$artist_age[m] < 0){
+    moma$vivomorto[m] <- "vivo"
+  }else if(moma$artist_age[m] == 0){
+    moma$vivomorto[m] <- "sem dados"
+  }else{
+    moma$vivomorto[m] <- "morto"
+  }
+  m = m + 1
+}
+
+```
+
+### 4.4.2 for e if
+
+```{r}
+for (k in 1:nrow(moma)){
+  if (moma$artist_age[k] <= 0){
+    moma$artist_age[k] <- 2017 - moma$BeginDate[k]
+  }
+}
+```
+
+### 4.4.3 Bônus: Ifelse
+
+Como já vimos, um data.frame é um conjunto de vetores do mesmo tamanho, vetores estes que possuem tipos de dados diferentes, podendo ser double, logical, interger e etc. 
+
+O `ifelse()` para além de conseguir fazer o mesmo que o _if_, ele permite realizar condicionais com objetos vetorizados. Vejamos:
+
+```{r}
+#Criando uma variável na tabela do MOMA
+moma$ehamericano <- ifelse(moma$Nationality == "American", 
+                           yes = "É americano", 
+                           no = "Não é americano")
+
+table(moma$ehamericano)
+
+#Par ou Impar
+ifelse(200 %% 2 == 0, "Par", "Impar")
+```
 
 # 5. Funções
 
