@@ -59,6 +59,8 @@ Interface RStudio: ![](rstudio.png)
 
 # 2. Tipos de Variáveis
 
+O que é uma variável?
+
 - Float
 
 - Double
@@ -74,6 +76,8 @@ Interface RStudio: ![](rstudio.png)
 As variáveis de tipo float represetam os números **decimais**
 
 ## 2.2. Double
+
+As variáveis double representam os números **reais**.
 
 ## 2.3. Boolean
 
@@ -119,7 +123,64 @@ FALSE | TRUE | FALSE  |
 
 - Data Frame
 
-# 4. Controladores de Fluxo
+##3.1. Vetores
+
+Uma maneira de guardar variáveis de um **mesmo tipo**.
+
+```{r}
+vetor <- c(1,2,3,4,5) #Guardei a seguência dentro do "vetor"
+
+#Caso eu queria fazer referência a um valor específico
+
+vetor[1] #Chama o primeiro valor de um vetor.
+```
+
+##3.2. Listas
+
+##3.3. Matrizes
+
+Enquanto o **vetor** é unidimensional, as matrizes são **bidimensionais**.
+
+```{r}
+matriz_1 <- matrix(data = c(1,2,3,4), nrow = 2, ncol = 2, byrow = T) #Cria uma matriz 2x2 com os números 1,2,3,4
+
+matriz_1
+
+#Caso eu queria  chamar uma valor agora preciso fornecer em qual linha e coluna ele está.
+
+matriz_1[1,2] #Chama o valor da linha 1 e coluna 2
+
+```
+
+##3.4. Data Frames
+
+As matrizes podem apenas guardar valores de um mesmo tipo. Os data frames, pelo contrário, podem guardar valores diferentes. Com essa estrutura de dados, podemos ter colunos numéricas lado a lado de colunas com valores categóricos. Normalmente, os data frames são a estrutura de dados utilizadas em nossas análises.
+
+```{r}
+palest.df <- data.frame(pales = c("Nathan", "Rafael"),
+                        gosta_mat = c("Ciência Política", "Sociologia"),
+                        conhe_r = c(9, 7),
+                        notas_poli = c(9.12344123, 8.093827133),
+                        notas_soc = c(8.1, 9.3))
+
+palest.df
+
+#Podemos pedir a média de uma coluna
+
+mean(palest.df$notas_poli) #Média das notas de política
+
+mean(palest.df$notas_soc) #Média das notas de sociologia
+
+#Podemos pedir tabelas
+
+table(palest.df$gosta_mat)
+
+table(palest.df$pales)
+
+```
+
+
+# 4. Controladores de Fluxohttps://github.com/ngiachetta/oficina_R_2017.git
 
 Para essa seção iremos utilizar um banco de dados do Museu de Arte Moderna de Nova York (MoMa), porém, como conseguiremos extrair estes dados? Simples, no [github](https://github.com/) existe um repositório com as [coleções do Museu](https://github.com/MuseumofModernArt/collection). Para extrair estes dados, vamos utilizar a função `read.csv()`.
 ```{r}
