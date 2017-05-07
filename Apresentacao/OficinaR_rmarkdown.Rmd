@@ -123,7 +123,7 @@ FALSE | TRUE | FALSE  |
 
 - Data Frame
 
-##3.1. Vetores
+## 3.1. Vetores
 
 Uma maneira de guardar variáveis de um **mesmo tipo**.
 
@@ -135,9 +135,9 @@ vetor <- c(1,2,3,4,5) #Guardei a seguência dentro do "vetor"
 vetor[1] #Chama o primeiro valor de um vetor.
 ```
 
-##3.2. Listas
+## 3.2. Listas
 
-##3.3. Matrizes
+## 3.3. Matrizes
 
 Enquanto o **vetor** é unidimensional, as matrizes são **bidimensionais**.
 
@@ -152,7 +152,7 @@ matriz_1[1,2] #Chama o valor da linha 1 e coluna 2
 
 ```
 
-##3.4. Data Frames
+## 3.4. Data Frames
 
 As matrizes podem apenas guardar valores de um mesmo tipo. Os data frames, pelo contrário, podem guardar valores diferentes. Com essa estrutura de dados, podemos ter colunos numéricas lado a lado de colunas com valores categóricos. Normalmente, os data frames são a estrutura de dados utilizadas em nossas análises.
 
