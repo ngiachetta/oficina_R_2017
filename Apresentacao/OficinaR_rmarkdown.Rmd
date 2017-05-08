@@ -174,16 +174,16 @@ matriz_1[1,2] #Chama o valor da linha 1 e coluna 2
 As matrizes podem apenas guardar valores de um mesmo tipo. Os data frames, pelo contrário, podem guardar valores diferentes. Com essa estrutura de dados, podemos ter colunos numéricas lado a lado de colunas com valores categóricos. Normalmente, os data frames são a estrutura de dados utilizadas em nossas análises.
 
 ```{r}
-palest.df <- data.frame(nomes = c("Nathan", "Rafael"),
-                        gosta_mat = c("Ciência Política", "Sociologia"),
-                        conhe_r = c(9, 7),
-                        notas_poli = c(9.12344123, 8.093827133),
-                        notas_soc = c(8.1, 9.3))
+palest.df <- data.frame(nomes = c("Nathan", "Rafael"), #Adiciona o nome. No caso, "Nathan" e "Rafael"
+                        gosta_mat = c("Ciência Política", "Sociologia"), #Adiciona as disciplinas preferidas
+                        conhe_r = c(9, 7), #Adiciona o conhecimento de R (0 - 10)
+                        notas_poli = c(9.12344123, 8.093827133), #Adiciona as notas de política
+                        notas_soc = c(8.1, 9.3)) #Adiciona as notas de sociologia
 
 palest.df
 ```
 
-Podemos pedir a média de uma coluna. Para isso, utilizamos o *$* como nome da nossa coluna, após o nome do nosso *data frame*. Por exemplo, caso você queira a coluna com os nomes, basta escrever *palest.df$nomes*.
+Podemos pedir a média de uma coluna. Para isso, utilizamos o *$* como nome da nossa coluna, após o nome do nosso *data frame*. Por exemplo, caso você queira a coluna com as médias de política, basta escrever *palest.df$notas_poli*. A média pode ser calculada a partir da função *mean()*. Logo precisamos apenas pedir *mean(palest.df$notas_poli)* para obtermos a média das notas de política
 
 ```{r}
 mean(palest.df$notas_poli) #Média das notas de política
