@@ -200,7 +200,7 @@ table(palest.df$nomes) #Tabela com os nomes
 ```
 
 
-# 4. Controladores de Fluxohttps://github.com/ngiachetta/oficina_R_2017.git
+# 4. Controladores de Fluxo
 
 Para essa seção iremos utilizar um banco de dados do Museu de Arte Moderna de Nova York (MoMa), porém, como conseguiremos extrair estes dados? Simples, no [github](https://github.com/) existe um repositório com as [coleções do Museu](https://github.com/MuseumofModernArt/collection). Para extrair estes dados, vamos utilizar a função `read.csv()`.
 ```{r}
