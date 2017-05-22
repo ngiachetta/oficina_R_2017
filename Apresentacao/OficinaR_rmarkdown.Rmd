@@ -171,34 +171,42 @@ matriz_1[1,2] #Chama o valor da linha 1 e coluna 2
 
 ## 3.4. Data Frames
 
-As matrizes podem apenas guardar valores de um mesmo tipo. Os data frames, pelo contrário, podem guardar valores diferentes. Com essa estrutura de dados, podemos ter colunos numéricas lado a lado de colunas com valores categóricos. Normalmente, os data frames são a estrutura de dados utilizadas em nossas análises.
+Até agora vimos estruturas de dados muito diferentes do que estamos acostumados. Podemos até nos perguntar, "mas onde eu vou usar um vetor? e as listas?". Por incrível que pareça, eles estão mais próximos do que imaginamos, eles formam o que chamamos de __Data Frames__.
+
+Data Frame é a estrutura de dados mais utilizada no R, principalmente para guardar dados. Podemos pensar que um data frame do R é equivalente a uma planilha do Excel.
+
+Ok, mas como vetores, listas e matrizes fazem parte de um Data Frame?
+
+1. Data frames podem ser representados por um tipo especial de lista em que cada elemento da lista tem o mesmo tamanho
 
 ```{r}
-palest.df <- data.frame(nomes = c("Nathan", "Rafael"), #Adiciona o nome. No caso, "Nathan" e "Rafael"
-                        gosta_mat = c("Ciência Política", "Sociologia"), #Adiciona as disciplinas preferidas
-                        conhe_r = c(9, 7), #Adiciona o conhecimento de R (0 - 10)
-                        notas_poli = c(9.12344123, 8.093827133), #Adiciona as notas de política
-                        notas_soc = c(8.1, 9.3)) #Adiciona as notas de sociologia
+filmes <- list(nome = c("Coração Valente", "Tatuagem", "Central do Brasil"), avaliacao = c(2,5,3), classf = c("Aventura", "Drama", "Drama"))
 
-palest.df
+df <- data.frame(filmes)
 ```
-
-Podemos pedir a média de uma coluna. Para isso, utilizamos o *$* como nome da nossa coluna, após o nome do nosso *data frame*. Por exemplo, caso você queira a coluna com as médias de política, basta escrever *palest.df$notas_poli*. A média pode ser calculada a partir da função *mean()*. Logo precisamos apenas pedir *mean(palest.df$notas_poli)* para obtermos a média das notas de política
+2. Também podemos simplificar, considerando um data frame como um conjunto de vetores de mesmo tamanho.
 
 ```{r}
-mean(palest.df$notas_poli) #Média das notas de política
+nome <- c("Coração Valente", "Tatuagem", "Central do Brasil")
 
-mean(palest.df$notas_soc) #Média das notas de sociologia
+avaliacao <- c(2,5,3)
+
+classf <- c("Aventura", "Drama", "Drama")
+
+df <- data.frame(nome, avaliacao, classf)
 ```
 
-Podemos pedir tabelas.
+Vimos que para criar um Data frame tivemos que usar a função `data.frame()`, mas e se nós quisermos trabalhar com tabelas prontas, isto é, importar dados?
+
+Para isso podemos usar as funções: `read.table()`, `read.csv()` ou `read.csv2()`. Vamos ver um exemplo:
 
 ```{r}
-table(palest.df$gosta_mat) #Tabela das preferências de matéria
+criticas <- read.csv2(file = "https://raw.githubusercontent.com/ngiachetta/oficina_R_2017/master/Material/OmeleteDf.csv", header = TRUE, sep = ";", stringsAsFactors = FALSE)
 
-table(palest.df$nomes) #Tabela com os nomes
+head(criticas) #Retorna as seis primeiras observações da tabela
+
+str(criticas) #Retorna a estrutura dos dados
 ```
-
 
 # 4. Controladores de Fluxo
 
