@@ -208,6 +208,20 @@ head(criticas) #Retorna as seis primeiras observações da tabela
 str(criticas) #Retorna a estrutura dos dados
 ```
 
+### 3.4.1 Acessando as colunas e observações
+
+Caso nosso objetivo seja olhar para apenas uma coluna podemos utilizar o seguinte símbolo: \$, ele nos retornará todas as observações da coluna.
+
+```{r}
+criticas$notacriticaV
+```
+
+Outra forma de acessar os dados pode ser realizada da mesma forma que fizemos com as matrizes.
+
+```{r}
+criticas[1:10,11]
+```
+
 # 4. Controladores de Fluxo
 
 Para essa seção iremos utilizar um banco de dados do Museu de Arte Moderna de Nova York (MoMa), porém, como conseguiremos extrair estes dados? Simples, no [github](https://github.com/) existe um repositório com as [coleções do Museu](https://github.com/MuseumofModernArt/collection). Para extrair estes dados, vamos utilizar a função `read.csv()`.
