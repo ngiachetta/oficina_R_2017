@@ -1,5 +1,6 @@
 #Manipulando o banco de dados do MoMA para que a oficina fique mais didática
 #O Dataset a seguir foi extraido da seguinte fonte: https://github.com/MuseumofModernArt/collection
+# As informações a seguir foram modificadas para fins didáticos.
 
 library(dplyr)
 #Abrindo o banco 
