@@ -3,7 +3,10 @@
 
 library(dplyr)
 #Abrindo o banco 
-MoMA <- read.csv("https://media.githubusercontent.com/media/MuseumofModernArt/collection/master/Artworks.csv", header = T, sep = ",", stringsAsFactors = F)
+MoMA <- read.csv("https://media.githubusercontent.com/media/MuseumofModernArt/collection/master/Artworks.csv", 
+                 header = T, 
+                 sep = ",",
+                 stringsAsFactors = F)
 
 #Excluindo variáveis que não serão usadas
 
@@ -34,6 +37,7 @@ retira_parenteses <- function(variavelMoMa){
   colocandoNA<- gsub("^$|^ $",NA,direita)
   variavelMoMa <- colocandoNA
 }
+
 MoMA$Nationality <- retira_parenteses(MoMA$Nationality)
 MoMA$BeginDate <- retira_parenteses(MoMA$BeginDate)
 MoMA$EndDate <- retira_parenteses(MoMA$EndDate)
@@ -49,14 +53,13 @@ MoMA <- MoMA %>%
 
 MoMA <- na.omit(MoMA)
 
+#Formas para diminuir e embaralhar os dados
+
+MoMA <- unique(MoMA)
+
+n <- nrow(MoMA)
+MoMA <- MoMA[sample(n),]
+
 #Exportanto data.frame
 
 write.csv2(x = MoMA, "MOMA_Oficina.csv", sep = ";")
-
-#Proposta de exercicio
-
-for (i in 1:length(MoMA2)){
-  if (MoMA$artist_age[i] < 0){
-    MoMA$artist_age[i] <- 2017 - (MoMA$artist_age[i]*(-1))
-  }
-}
