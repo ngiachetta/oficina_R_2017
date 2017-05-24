@@ -61,9 +61,15 @@ Interface RStudio: ![](rstudio.png)
 
 O que é uma variável?
 
-- Float
+Normalmente, quando programamos, nós guardamos os resultados de nossas operações em variáveis. Mas por que eu devo me preocupar com o tipo de variável? Existem dois motivos importantes para isso. 
+
+Em primeiro lugar, cada variável ocupa um determinado espaço da sua memória. A fim de otimizar o seu código, é importante ficar atento para não guardar valores "pequenos" em variávels "grandes". Dificilmente isso será um problema para você a não ser que você esteja utilizando bancos de dados relativamente grandes.
+
+Em segundo lugar, quando você realiza análises mais sofisticadas, como, por exemplo, uma regressão linear, o R é importante estar atento ao tipo de cada variável. Por exemplo, caso você queira que o R trate uma variável como numérica ela não pode ser guardada como se fosse uma variável de texto.
 
 - Double
+
+- Integer
 
 - Boolean
 
@@ -71,32 +77,76 @@ O que é uma variável?
 
 - Factor
 
-## 2.1. Float
 
-As variáveis de tipo float represetam os números **decimais**
 
-## 2.2. Double
+## 2.1. Double
 
-As variáveis double representam os números **reais**.
+As variáveis double representam os números **reais**. Por padrão, o R guarda qualquer variável númerica com oum *double*.
+
+Existe uma função no R muito útil para saber qual o tipo de uma variável. Ela se chama *typeof*. Para usá-la:
+
+```{r}
+typeof(Variável)
+```
+
+```{r}
+typeof(1) #Qual o tipo da variável 1?
+```
+
+## 2.2. Integer
+
+As variáveis de tipo float represetam os números **inteiros**.
 
 ## 2.3. Boolean
 
-- Variável com dois valores: FALSE (0), TRUE (1)
+De maneira geral, eles são consequências de testes de condição. Quando obtemos o 1, dizemos que esse teste foi verdadeiro. Quando obtemos o 0, dizemos que esse teste foi falso. 
 
-- Usadas para **controle de fluxo**.
+As variáveis booleanas são normalmente utilizadas para controles de fluxo e, consequentemente, na automatizaçao de tarefas.
+
+- Variável com dois valores: FALSE (0), TRUE (1)
 
 ## 2.3.1. Operações Booleanas
 
-- Duas operações básicas: **and**(e) e **or** (ou).
+As variáveis boolenas são resultados de equações boolenas. Que equações são essas? Existem duas maneiras de operacionalizar essas equeções. Podemos nos perguntar,(1) se duas afirmações são verdadeiras, ou (2) se pelo menos uma delas é verdadeira. No primeiro caso, temos as operações de tipo **and** ("e"). No segundo caso, temos as operações de tipo **or** ("ou").
 
-1. Tabela do **and**
+1. **And (&)**
+
+Queremos saber se dois testes são verdadeiros. O resultado dessa operação tem a seguinte lógica: necessariamente os dos lados devem ser verdadeiros para que a equaçãos seja verdadeira. Caso contrário, ela é falsa.
+
+Por exemplo, imagine a seguinte frase: "2 é maior que 1 e 3 é maior que 2?". Provavelmente a sua resposta foi sim. Nesse caso, o valor booleano dessa operação é TRUE(1), ou VERDADEIRO(1).
+
+Antes de praticar, vamos fazer mais um exemplo. Agora vou escrever em matematiquês. "2 x 5 == 10 &(e) 3 x 3 > 10". Vamos por partes. Vamos olhar para a parte esquerda primeiro. Quanto é 2 x 5? 10. 10 é igual 10? Sim! Muito bem! A nossa parte esquerda é verdadeira. E a direita? 3 x 3 é 9. 9 é maior que 10? Não. Logo a parte direita da nossa equação é falsa. Como as operações de tipo **and** necessitam que os dois lados sejam verdadeiros, o resultado é que a nossa equação boolena é falsa.
+
+Como já sabemos a lógica, vamos praticar!
+
+```{r}
+#Vamos mandar o R fazer essa última equação para gente
+#Note que no R, o sinal de multiplicação é o *
+
+2 * 5 == 10 & 3 * 3 > 10 
+
+#Deseja treinar um pouco mais? Faça essas próximas de cabeça e depois peça para o R lhe mostrar o resultado.
+
+1 + 2 < 3 & 2 * 1 > 1
+
+```
+
+Os resultados de uma equação **and** podem ser observados na seguinte tabela.
 
 ------|TRUE   |   FALSE|
 ------|-------|--------|
 TRUE  | TRUE  | FALSE  |
 FALSE | FALSE | FALSE  |
 
-2. Tabela do **or**
+2. **Or (|)**
+
+Equações de tipo **or** são parecidas com a anterior, mas o resultado delas, digamos assim, é mais "brando". Nessas equações, basta que uma das afirmaçõs seja verdadeira para se obter um resultado verdadeiro.
+
+```{r}
+#10 é maior que 2 ou 2 é menor que 4?
+
+10 > 2 | 2 < 4
+```
 
 ------|TRUE   |   FALSE|
 ------|-------|--------|
@@ -105,13 +155,28 @@ FALSE | TRUE | FALSE  |
 
 ## 2.4. Character
 
-- A variável *string* do R. 
+- A variável *string* do R. Ela basicamente é uma variável para guardar textos. Normalmente nós não trabalhos com esse tipo de variável em bancos de dados, mas caso você utilize o R para análises de texto, você trabalhará bastante com ela.
+
+```{r}
+typeof("Hello World!")
+```
 
 ## 2.5. Factor
 
-- Variável categórica do R.
+Por fim, chegamos ao fator. Ele é uma extensão da variável character. Eles são as variáveis categóricas do R. Podemos definí-los como nominais ou ordinais.
 
-- Poder ser **nominal** ou **ordinal**.
+```{r}
+fator <-  (c("Bom", "Ótimo", "Ruim", "Reguar"))
+
+typeof(fator) 
+
+#Te peguei! Calma. Por padrão, o R guarda essas variáveis como *character*.
+
+#Precisamos falar para o R que essas variáveis são um *factor*.
+
+#Primeiro a gente informa que a nossa variável possui níveis
+levels(fator) <- c("Ótimo", "Bom" , "Reguar" , "Ruim")
+```
 
 # 3. Estrutura dos Dados
 
