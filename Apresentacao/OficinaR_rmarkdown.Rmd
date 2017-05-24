@@ -50,7 +50,7 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 - Diferenciais do RStudio pro Terminal do R:
 
 1. Script
-2. Ambiênte/Histórico
+2. Ambiente/Histórico
 3. Abinha Multifuncional
 
 ***
@@ -63,7 +63,7 @@ O que é uma variável?
 
 Normalmente, quando programamos, nós guardamos os resultados de nossas operações em variáveis. Mas por que eu devo me preocupar com o tipo de variável? Existem dois motivos importantes para isso. 
 
-Em primeiro lugar, cada variável ocupa um determinado espaço da sua memória. A fim de otimizar o seu código, é importante ficar atento para não guardar valores "pequenos" em variávels "grandes". Dificilmente isso será um problema para você a não ser que você esteja utilizando bancos de dados relativamente grandes.
+Em primeiro lugar, cada variável ocupa um determinado espaço da sua memória. A fim de otimizar o seu código, é importante ficar atento para não guardar valores "pequenos" em variável "grandes". Dificilmente isso será um problema para você a não ser que você esteja utilizando bancos de dados relativamente grandes.
 
 Em segundo lugar, quando você realiza análises mais sofisticadas, como, por exemplo, uma regressão linear, o R é importante estar atento ao tipo de cada variável. Por exemplo, caso você queira que o R trate uma variável como numérica ela não pode ser guardada como se fosse uma variável de texto.
 
@@ -75,13 +75,9 @@ Em segundo lugar, quando você realiza análises mais sofisticadas, como, por ex
 
 - Character
 
-- Factor
-
-
-
 ## 2.1. Double
 
-As variáveis double representam os números **reais**. Por padrão, o R guarda qualquer variável númerica com oum *double*.
+As variáveis double representam os números **reais**. Por padrão, o R guarda qualquer variável numérica como um *double*.
 
 Existe uma função no R muito útil para saber qual o tipo de uma variável. Ela se chama *typeof*. Para usá-la:
 
@@ -95,27 +91,27 @@ typeof(1) #Qual o tipo da variável 1?
 
 ## 2.2. Integer
 
-As variáveis de tipo float represetam os números **inteiros**.
+As variáveis de tipo float representam os números **inteiros**.
 
 ## 2.3. Boolean
 
 De maneira geral, eles são consequências de testes de condição. Quando obtemos o 1, dizemos que esse teste foi verdadeiro. Quando obtemos o 0, dizemos que esse teste foi falso. 
 
-As variáveis booleanas são normalmente utilizadas para controles de fluxo e, consequentemente, na automatizaçao de tarefas.
+As variáveis booleanas são normalmente utilizadas para controles de fluxo e, consequentemente, na automatização de tarefas.
 
 - Variável com dois valores: FALSE (0), TRUE (1)
 
 ## 2.3.1. Operações Booleanas
 
-As variáveis boolenas são resultados de equações boolenas. Que equações são essas? Existem duas maneiras de operacionalizar essas equeções. Podemos nos perguntar,(1) se duas afirmações são verdadeiras, ou (2) se pelo menos uma delas é verdadeira. No primeiro caso, temos as operações de tipo **and** ("e"). No segundo caso, temos as operações de tipo **or** ("ou").
+As variáveis booleanas são resultados de equações booleanas. Que equações são essas? Existem duas maneiras de operacionalizar essas equações. Podemos nos perguntar,(1) se duas afirmações são verdadeiras, ou (2) se pelo menos uma delas é verdadeira. No primeiro caso, temos as operações de tipo **and** ("e"). No segundo caso, temos as operações de tipo **or** ("ou").
 
 1. **And (&)**
 
-Queremos saber se dois testes são verdadeiros. O resultado dessa operação tem a seguinte lógica: necessariamente os dos lados devem ser verdadeiros para que a equaçãos seja verdadeira. Caso contrário, ela é falsa.
+Queremos saber se dois testes são verdadeiros. O resultado dessa operação tem a seguinte lógica: necessariamente os dos lados devem ser verdadeiros para que a equações seja verdadeira. Caso contrário, ela é falsa.
 
 Por exemplo, imagine a seguinte frase: "2 é maior que 1 e 3 é maior que 2?". Provavelmente a sua resposta foi sim. Nesse caso, o valor booleano dessa operação é TRUE(1), ou VERDADEIRO(1).
 
-Antes de praticar, vamos fazer mais um exemplo. Agora vou escrever em matematiquês. "2 x 5 == 10 &(e) 3 x 3 > 10". Vamos por partes. Vamos olhar para a parte esquerda primeiro. Quanto é 2 x 5? 10. 10 é igual 10? Sim! Muito bem! A nossa parte esquerda é verdadeira. E a direita? 3 x 3 é 9. 9 é maior que 10? Não. Logo a parte direita da nossa equação é falsa. Como as operações de tipo **and** necessitam que os dois lados sejam verdadeiros, o resultado é que a nossa equação boolena é falsa.
+Antes de praticar, vamos fazer mais um exemplo. Agora vou escrever em matematiquês. "2 x 5 == 10 &(e) 3 x 3 > 10". Vamos por partes. Vamos olhar para a parte esquerda primeiro. Quanto é 2 x 5? 10. 10 é igual 10? Sim! Muito bem! A nossa parte esquerda é verdadeira. E a direita? 3 x 3 é 9. 9 é maior que 10? Não. Logo a parte direita da nossa equação é falsa. Como as operações de tipo **and** necessitam que os dois lados sejam verdadeiros, o resultado é que a nossa equação booleana é falsa.
 
 Como já sabemos a lógica, vamos praticar!
 
@@ -140,7 +136,7 @@ FALSE | FALSE | FALSE  |
 
 2. **Or (|)**
 
-Equações de tipo **or** são parecidas com a anterior, mas o resultado delas, digamos assim, é mais "brando". Nessas equações, basta que uma das afirmaçõs seja verdadeira para se obter um resultado verdadeiro.
+Equações de tipo **or** são parecidas com a anterior, mas o resultado delas, digamos assim, é mais "brando". Nessas equações, basta que uma das afirmações seja verdadeira para se obter um resultado verdadeiro.
 
 ```{r}
 #10 é maior que 2 ou 2 é menor que 4?
@@ -161,24 +157,11 @@ FALSE | TRUE | FALSE  |
 typeof("Hello World!")
 ```
 
-## 2.5. Factor
-
-Por fim, chegamos ao fator. Ele é uma extensão da variável character. Eles são as variáveis categóricas do R. Podemos definí-los como nominais ou ordinais.
-
-```{r}
-fator <-  (c("Bom", "Ótimo", "Ruim", "Reguar"))
-
-typeof(fator) 
-
-#Te peguei! Calma. Por padrão, o R guarda essas variáveis como *character*.
-
-#Precisamos falar para o R que essas variáveis são um *factor*.
-
-#Primeiro a gente informa que a nossa variável possui níveis
-levels(fator) <- c("Ótimo", "Bom" , "Reguar" , "Ruim")
-```
-
 # 3. Estrutura dos Dados
+
+Até agora trabalhos como tipos de variáveis atômicos. Além de guardar resultados isolados em variáveis, nós podemos guardar conjuntos de variáveis. Quando fazemos isso, nós deixamos de trabalhar apenas com variáveis e passamos a trabalhar também com estruturas de dados.
+
+No R, nós temos 4 principais estruturas de dados:
 
 - Vetores
 
@@ -190,48 +173,117 @@ levels(fator) <- c("Ótimo", "Bom" , "Reguar" , "Ruim")
 
 ## 3.1. Vetores
 
-Uma maneira de guardar variáveis de um **mesmo tipo**.
+Quando utilizamos vetores, nós guardamos valores em uma determinado ordem. Por exemplo, eu posso guardar o a sequência 1, 2, 3, 4 e 5 dentro de um vetor chamado "sequência". Nesse caso, o nosso vetor é composto de variáveis "double".
+
+Em tese, podemos criar vetores com quaisquer tipos de variáveis. Contudo, essa estrutura de dados pode apenas conter valores de um mesmo tipo. Por exemplo, caso eu guarde em um vetor a seguinte sequência **1, 2, "Oi", 4.2, TRUE**, o R converto todos os valores para o mínimo comum entre eles. No caso, todos seriam tratados como *character*
 
 ```{r}
-vetor <- c(1,2,3,4,5) #Guardei a seguência dentro do "vetor"
+#Para criar vetores no R, utilizamos o comando "c()"
+
+#Criando um vetor de 1 a 5 e guardando sob o nome "sequência"
+sequencia <- c(1,2,3,4,5) 
+
+
 ```
 
-Caso eu queria fazer referência a um valor específico
+Como o conjunto de dados possui uma ordem, podemos chamar cada um dos valores utilizando os colchetes "[]".
 
 ```{r}
-vetor[1] #Chama o primeiro valor de um vetor.
+#Para chamar o valor da posição "i" de um vetor, utilizamos a seguinte estrutura
+
+vetor[i]
+
+#Podemos substituir o "i" pela posição do valor de interesse e o "vetor" pelo nome que demos ao nosso vetor.
+
+sequencia[1]
 ```
+
+## 3.1.1. Factor
+
+Nós podemos falar para o R que os valores dentro dessa estrutura de dados possuem "níveis". 
+
+Com isso, podemos trabalhar com dados categóricos no R. 
+
+```{r}
+fator <-  c("Bom", "Ótimo", "Ruim", "Reguar")
+
+typeof(fator) 
+
+#Precisamos falar para o R que essas variáveis são um *factor*.
+
+#Primeiro a gente informa que a nossa variável possui níveis
+
+levels(fator) <- c("Ótimo", "Bom" , "Reguar" , "Ruim")
+```
+
+Lembre-se que os valores contidos dentro de um vetor continuam sendo considerados *character*. Caso você use a função "typeof()".
 
 ## 3.2. Listas
 
-Semelhante a um vetor, a lista é uma forma de guardar valores de **diferentes tipos**.
+Vamos dizer que você queira guardar informações sobre um dos organizadores dessa disciplina. Uma das maneiras de se fazer isso é pelo uso de uma lista. Com ela, pomos guardar valores de diferentes tipos. Ao contrário do vetor, em que os dados precisam ser de mesmo tipo, com a lista não temos essa limitação.
+
+Por exemplo, um dos organizados se chama Rafael. Ele tem 20 anos, 1,87 metros de altura e mora em São Paulo.
 
 ```{r}
-lista_r <- list("Rafael", 20, 1.87, "São Paulo") #Cria uma lista
+#Uma lista com as informações de Rafael
+lista_r <- list(nome = "Rafael",
+                idade = 20,
+                altura = 1.87,
+                mora = "São Paulo") 
+```
 
-lista_r[1]
+Como você viu, outra vantagem da lista é que podemos dar "nomes" às variáveis. Logo nós podemos chamar uma valor dela não só pela posição, mas também a partir desse "nome". Para isso, utilizamos o "$".
 
-lista_r[[1]]
+Por exemplo, caso eu queira, o valores de uma lista guardados em "idade", podemos utilizar lista_r$idade. Contudo, nós também podemos chamar um valor de acordo com a posição que ele ocupa. A única diferença é que agora nós devemos utilizar dois colchetes ao invés de um "[[]]".
+
+```{r}
+#Para chamar um valor dentro da lista, ou chamamos pelo "nome" de sua posição, ou pela posição "i" que ele ocupa
+lista$nome
+
+lista[[i]]
+
+#Na nossa lista, podemos chamar idade de duas maneiras.
+
+#Ou utilizamos
+
+lista_r$idade
+
+#Ou, como idade ocupa a segunda posição da lista, utilizamos
+
+lista_r[[2]]
 ```
 
 ## 3.3. Matrizes
 
-Enquanto o **vetor** é unidimensional, as matrizes são **bidimensionais**.
+Aprendemos a guardar valores em vetores e listas. Caso você já tenha trabalhado com banco de dados, deve saber que dificilmente nós nos detemos a um único caso. De maneira geral, nossos bancos de dados tem formato retangular, com diversas observações e variáveis.
+
+Antes de apresentar a maneira mais comum de trabalhar com bancos de dados no R, vamos trabalhar rapidamente com a ideia de matrizes. Ao contrário de vetores que se limitam a uma representação **unidimensional** dos dados, com as matrizes, podemos guardar informações de maneira **bidimensional**.
+
+Porém, assim, como os vatores, matrizes necessariamente guardam valores de mesmo tipo.
+
+Vamos ver um pouquinho disso na prática.
 
 ```{r}
+#Cria uma matriz 2x2 com os números 1,2,3,4
 matriz_1 <- matrix(data = c(1,2,3,4), 
                    nrow = 2, 
                    ncol = 2, 
-                   byrow = T) #Cria uma matriz 2x2 com os números 1,2,3,4
+                   byrow = T) 
 
 matriz_1
-
 ```
 
-Caso eu queria chamar uma valor agora preciso fornecer em qual linha e coluna ele está.
+Com uma matriz, não basta informar a posição "i" do nosso dado. Precisamos dar a linha e a coluna que queremos. Por exemplo, caso você queira o valor contido na linha 1, coluna 2, escrevemos a seguinte expressão:
 
 ```{r}
-matriz_1[1,2] #Chama o valor da linha 1 e coluna 2
+matriz_1[1,2] 
+```
+
+A partir disso, já podemos pensar em uma regra geral para chamar dados de matrizes.
+
+```{r}
+#Para chamar o valor contido em uma linha "i" e uma coluna "j" de uma "matriz", utilizamos a seguinte expressão:
+matriz[i,j]
 ```
 
 ## 3.4. Data Frames
@@ -333,7 +385,7 @@ Percebam que o comando _if_ realiza a condição apenas para casos não vetoriza
 
 ## 4.2 Loops com o for
 
-E se nós quisessemos percorrer os primeiros 10 valores da coluna nacionalida do nosso banco de dados? Uma das soluções para isso é usar o for!
+E se nós quiséssemos percorrer os primeiros 10 valores da coluna nacionalida do nosso banco de dados? Uma das soluções para isso é usar o for!
 
 ```{r}
 for (i in 1:10){
