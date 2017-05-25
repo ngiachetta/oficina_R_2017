@@ -574,4 +574,48 @@ ifelse(200 %% 2 == 0, "Par", "Impar")
 
 # 5. Funções
 
-- O que é uma função no R?
+Ao longo da oficina vimos algumas objetos que no R são chamados de funções, como por exemplo, `typeof()`, `levels()`, `list()`, `data.frame()` e entre outros.
+
+Mas o que é uma função? Função nada mais é que um pedaço de código  que executa uma tarefa especifica. Ela pode nos ajudar em tarefas que exigem muita repetição de um mesmo código, por exemplo.
+
+Também podemos dizer que de uma forma geral, uma função é um objeto que recebe valores de entrada e retorna valores de saída.
+
+
+# 5.1 Definindo sua própria função
+
+```{r}
+minha_funcao <- function (arg1, arg2){
+	body
+}
+```
+Podemos destar quatro partes principais
+
+- função `function()` - Uma função que fornece so mecanismos basicos para definir novas funções na linguagem R 
+
+- Argumentos
+
+- Body
+
+- Nome da função
+
+Vamos ver um exemplo:
+
+```{r}
+
+idade <- function(nasc, mort = 0){
+	if(mort != 0){
+		idade <- mort - nasc
+	}else{
+		idade <- 2017-nasc
+	}
+	idade	
+}
+```
+Quando nós rodamos a função acima, criamos um objeto chamado "idade". Isso significa que agora temos uma função para usar assim como as outras que já vimos até então.
+
+```{r}
+idade(nasc = 1997, mort = 0)
+
+idade(nasc = 1800, mort = 1886)
+```
+
