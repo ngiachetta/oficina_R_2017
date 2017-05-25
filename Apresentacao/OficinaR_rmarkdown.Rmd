@@ -31,7 +31,7 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 - Funções.
 
-# 1. Ambiente do R
+# 1. Ambiente do R - ESTA PARTE EU VOU COLOCAR NO SLIDE INICIAL, É MELHOR PARA APRESENTAR A FERRAMENTA
 
 R é uma linguagem de programação. Logo nós a utilizamos por meio de linhas de código. Ainda que isso, a princípio, pareça ser muito complicado; com o tempo, você se sentirá confortável em programar linhas e mais linhas.
 
@@ -65,7 +65,7 @@ Além do terminal, que se encontra por padrão na parte inferior esquerda, o RSt
 
 3. Abinha multifuncional: do lado inferior direito temos a nossa abinha multifuncional. Nela temos acesso a aba de ajudas, aos gráficos produzidos.
 
-# 2. Primeiros passos
+# 2. Primeiros passos - NÃO!!! Sobretudo a segunda parte dá para discutir na seção de booleanos, não tem necessidade desse inicio.
 
 Já temos alguma familiaridade com o R. Agora vamos tentar entender como ele funciona e como ele pode ser útil para as nossas análises.
 
@@ -115,16 +115,16 @@ Percebeu a diferença? Se não, _don't panic_. Conforme formos discutindo os pr�
 
 # 2. Tipos de Variáveis
 
-Bom, até agora já sabemos o que o R é e também já sabemos utilizar o R como uma calculadora. Vamos agora aprender a "guardar" os nossos dados. Isso é relativamente muito simples. Basta associar uma determinada palavra com um valor. Por exemplo,
+Bom, até agora já sabemos o que o R é e também já sabemos utilizar o R como uma calculadora[NAOOO!!]. Vamos agora aprender a "guardar" os nossos dados. Isso é relativamente muito simples. Basta associar uma determinada palavra com um valor. Por exemplo,
 
 ```{r}
-x = 1
+x <- 1
 ```
 
-Acabeid de falar pro R guardar no "x" o valor 1. Podemos fazer isso com palavras
+Acabei de falar pro R guardar no "x" o valor 1. Podemos fazer isso com palavras
 
 ```{r}
-x = "Hellor World!"
+x <- "Hellor World!"
 ```
 
 Agora, guardamos a frase "Hello World!" dentro da variável "x". Caso você queira, podemos "chamar" o valor de uma variável. Basta escrê-la
@@ -159,7 +159,7 @@ Primeiro, vamos atribuir um valor a uma variável.
 x <- 1
 ```
 
-Repare que dessa vez eu não utilizei o sinal de igual (=). No R, podemos utilizar essa seta (<-) como equivalente do igual (=). De maneira geral, utilizamos a **<-** quando atribuímos um valor a uma variável. Deixamos o "=" para outras situações que veremos mais a frente.
+Repare que dessa vez eu não utilizei o sinal de igual (=). No R, podemos utilizar essa seta (<-) como equivalente do igual (=). De maneira geral, utilizamos a **<-** quando atribuímos um valor a uma variável. Deixamos o "=" para outras situações que veremos mais a frente. __[O igual não é muito utilizado na linguagem quando atribuimos valores a variaveis, recomendo tirar essa parte, pois pode confundir as pessoas]__
 
 Voltando, temos uma variável "x" com o valor 1. Quanto será o tipo dessa nossa variável?
 
@@ -187,7 +187,7 @@ typeof("Hello World!")
 
 ## 2.3. Booleano
 
-Lembra quando testasmos se uma afirmação é verdadeira? O resultado dessas operações são as nossas variáveis booleanas. Como ela testa a 
+Lembra quando testasmos se uma afirmação é verdadeira?[Alterar aqui] O resultado dessas operações são as nossas variáveis booleanas. Como ela testa a 
 
 - Variável com dois valores: FALSE (0), TRUE (1)
 
@@ -251,7 +251,7 @@ No R, nós temos 4 principais estruturas de dados:
 
 - Lista
 
-- Matrizes
+- Matrizes [PENSAR A NECESSIDADE DE MATRIZES PARA ESTUDANTES DE SOCIAIS]
 
 - Data Frame
 
@@ -306,7 +306,7 @@ Lembre-se que os valores contidos dentro de um vetor continuam sendo considerado
 
 Vamos dizer que você queira guardar informações sobre um dos organizadores dessa disciplina. Uma das maneiras de se fazer isso é pelo uso de uma lista. Com ela, pomos guardar valores de diferentes tipos. Ao contrário do vetor, em que os dados precisam ser de mesmo tipo, com a lista não temos essa limitação.
 
-Por exemplo, um dos organizados se chama Rafael. Ele tem 20 anos, 1,87 metros de altura e mora em São Paulo.
+Por exemplo, um dos organizadores se chama Rafael. Ele tem 20 anos, 1,87 metros de altura e mora em São Paulo.
 
 ```{r}
 #Uma lista com as informações de Rafael
@@ -316,7 +316,7 @@ lista_r <- list(nome = "Rafael",
                 mora = "São Paulo") 
 ```
 
-Como você viu, outra vantagem da lista é que podemos dar "nomes" às variáveis. Logo nós podemos chamar uma valor dela não só pela posição, mas também a partir desse "nome". Para isso, utilizamos o "$".
+Como você viu, outra vantagem da lista é que podemos dar "nomes" às variáveis. Logo nós podemos chamar o valor dela não só pela posição, mas também a partir desse "nome". Para isso, utilizamos o "$".
 
 Por exemplo, caso eu queira, o valores de uma lista guardados em "idade", podemos utilizar lista_r$idade. Contudo, nós também podemos chamar um valor de acordo com a posição que ele ocupa. A única diferença é que agora nós devemos utilizar dois colchetes ao invés de um "[[]]".
 
@@ -411,13 +411,13 @@ str(criticas) #Retorna a estrutura dos dados
 
 ### 3.4.1 Acessando as colunas e observações
 
-Caso nosso objetivo seja olhar para apenas uma coluna podemos utilizar o seguinte símbolo: \$, ele nos retornará todas as observações da coluna.
+Caso nosso objetivo seja olhar para apenas uma coluna podemos utilizar o mesmo símbolo que vimos na seção das listas: \$. Ele nos retornará todas as observações da coluna.
 
 ```{r}
 criticas$notacriticaV
 ```
 
-Outra forma de acessar os dados pode ser realizada da mesma forma que fizemos com as matrizes.
+Outra forma de acessar os dados pode ser realizada da mesma forma que fizemos com as matrizes. [Mudar a frase caso não utilizemos as matrizes]
 
 ```{r}
 criticas[1:10,11]
