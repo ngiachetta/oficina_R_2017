@@ -251,7 +251,7 @@ No R, nós temos 4 principais estruturas de dados:
 
 - Lista
 
-- Matrizes [PENSAR A NECESSIDADE DE MATRIZES PARA ESTUDANTES DE SOCIAIS]
+- Matrizes
 
 - Data Frame
 
@@ -417,7 +417,7 @@ Caso nosso objetivo seja olhar para apenas uma coluna podemos utilizar o mesmo s
 criticas$notacriticaV
 ```
 
-Outra forma de acessar os dados pode ser realizada da mesma forma que fizemos com as matrizes. [Mudar a frase caso não utilizemos as matrizes]
+Outra forma de acessar os dados pode ser realizada da mesma forma que fizemos com as matrizes. 
 
 ```{r}
 criticas[1:10,11]
