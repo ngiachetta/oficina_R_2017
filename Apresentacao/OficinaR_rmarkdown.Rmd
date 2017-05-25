@@ -33,71 +33,161 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 # 1. Ambiente do R
 
-- Linguagem de programação.
+R é uma linguagem de programação. Logo nós a utilizamos por meio de linhas de código. Ainda que isso, a princípio, pareça ser muito complicado; com o tempo, você se sentirá confortável em programar linhas e mais linhas.
 
-- Software livre e Comunidade.
+Uma das grandes vantagens do R é que ele é livre em todos os sentidos. Você pode baixá-lo sem pagar um centavo, ao mesmo tempo que, caso queira, pode ter acesso a toda a sua programação.
+
+Ao contrário de outros programas, ele não tem uma empresa por traz. Não temos a IBM nos dando suporte como no SPSS. Basicamente, quando baixamos o R, temos acesso meramente aos pacotes básicos. Caso você queira um função que não exista, o único jeito é correr atraz de pacote pronto ou programar você mesmo.
+
+Mas calma! De maneira geral, você não precisa passar dias programando cada uma das suas funções. Além daquelas que já vem no pacote básico (diga-se de passagem, já são mais do que suficientes para realizar diversos tipos de análise e tratamentos de dados), nós temos milhares de pacotes disponíveis totalmente de graça. Após ter uma noção básico do R, você provavelmente começará a utilizá-los.
+
+Contudo, antes disso, vamos nos familiarizar com a interface do R e aprender alguns comandos básicos. 
 
 ## 1.1. O Console
 
-- O R é operado por meio de um **terminal**
+Como já dito, operamos o R por meio de um terminal. Caso você utilize o Windows (Ruindows), ao baixar o R, será oferecido uma interface gráfica bem simples. 
 
 ![](terminal_r.png)
 
+Como você pode ver, não temos nada mais que um terminal. É possível também abrir um _script_ (janela da direita), mas vamos deixar isso para quando você já tiver um conhcimento mais razoável.
+
 ## 1.2. O RStudio
 
-- Interface Gráfica para o R
-
-- Diferenciais do RStudio pro Terminal do R:
-
-1. Script
-2. Ambiente/Histórico
-3. Abinha Multifuncional
-
-***
+Salve preferências pessoais, grande parte das pessoas que utilizam R no dia a dia fazem isso por meio do RStudio. Ele fornece uma interface gráfica mais completa. Além disso, ele é muito útil para quem está começando.
 
 Interface RStudio: ![](rstudio.png)
 
+Além do terminal, que se encontra por padrão na parte inferior esquerda, o RStudio nos fornece outras três janelas:
+
+1. Script: dificilmente escrevemos o nosso código direto no terminal. É muito mais prático salvá-lo em um arquivo e rodá-lo quando quisermos. Esse arquivo no R se chama _script_. Ter o hábito de escrever no _script_ é fundamental. É uma maneira de ter salvo todas as modificações que fizemos em um banco para produzir as análises que queremos.
+
+2. Ambiente/Histórico: do lado superior direito temos uma janela com o nosso histórico e com todos as nossas variáveis carregados no momento. 
+
+3. Abinha multifuncional: do lado inferior direito temos a nossa abinha multifuncional. Nela temos acesso a aba de ajudas, aos gráficos produzidos.
+
+# 2. Primeiros passos
+
+Já temos alguma familiaridade com o R. Agora vamos tentar entender como ele funciona e como ele pode ser útil para as nossas análises.
+
+O R, antes de tudo, pode ser utilizado com uma calculadora. Experimente escrever "1 + 1"
+
+```{r}
+1 + 1
+
+3 * 2 #Repare que o sinal de vezes é *
+
+2 ^ 2 #Repare que isso é 2 ao quadrado
+
+4 / 2 #Repare que o sinal de divisão é /
+```
+
+Além disso, podemos testar se uma afirmação matemática é verdadeira. Por exemplo, 2 é maior que 4? 2 não é vamior que quatro. Logo a nossa afirmação é falsa.
+
+Experimente perguntar isso pro R.
+
+```{r}
+2 > 4
+
+#O que ocorre quando perguntamos se 2 é menor que 4?
+
+2 < 4
+
+3 > 3 #3 maior que 3
+
+3 >= 3 #3 maior ou igual a 3
+
+3 <= 3 #3 menor ou igual a 3
+
+3 == 3 #3 é igual a 3
+```
+
+Essas últimas equações não possuem como resposta um valor numérico. Na próxima seção trabalharemos um pouco sobre operações booleanas e veremos como tudo isso pode ser útil para a gente.
+
+Antes disso, repare que para testar uma igualdade nós utilizamos o dois sinais de igual "==". Por que não utilizar apenas um? Aqui a gente começa a trabalhar com a ideia de variável. Em poucas palavras, quando se utiliza apenas um, estamos atribuindo um valor a uma variável. Quando utilizamos dois, queremos testar se há uma igualdade entre o lado direito e o esquerdo do sinal.
+
+```{r}
+2 == 3 #2 é igual a 3?
+
+x = 2 #Estamos falando para o R que a variável "x" possui o valor 2.
+```
+
+Percebeu a diferença? Se não, _don't panic_. Conforme formos discutindo os próximos assuntos isso provavelmente ficará mais claro.
+
 # 2. Tipos de Variáveis
 
-O que é uma variável?
+Bom, até agora já sabemos o que o R é e também já sabemos utilizar o R como uma calculadora. Vamos agora aprender a "guardar" os nossos dados. Isso é relativamente muito simples. Basta associar uma determinada palavra com um valor. Por exemplo,
 
-Normalmente, quando programamos, nós guardamos os resultados de nossas operações em variáveis. Mas por que eu devo me preocupar com o tipo de variável? Existem dois motivos importantes para isso. 
+```{r}
+x = 1
+```
 
-Em primeiro lugar, cada variável ocupa um determinado espaço da sua memória. A fim de otimizar o seu código, é importante ficar atento para não guardar valores "pequenos" em variável "grandes". Dificilmente isso será um problema para você a não ser que você esteja utilizando bancos de dados relativamente grandes.
+Acabeid de falar pro R guardar no "x" o valor 1. Podemos fazer isso com palavras
 
-Em segundo lugar, quando você realiza análises mais sofisticadas, como, por exemplo, uma regressão linear, o R é importante estar atento ao tipo de cada variável. Por exemplo, caso você queira que o R trate uma variável como numérica ela não pode ser guardada como se fosse uma variável de texto.
+```{r}
+x = "Hellor World!"
+```
+
+Agora, guardamos a frase "Hello World!" dentro da variável "x". Caso você queira, podemos "chamar" o valor de uma variável. Basta escrê-la
+
+```{r}
+x 
+```
+
+Isso não parece muito difícil, não? Mas qual a complicação envolvida nesse processo? Tentaremos explicar isso por meio de uma analogia. Toda vez que você atribui um valor a uma variavel é como se estivessemos guardando uma "coisa" dentro de uma gaveta. De maneira geral, como pessoas organizadas que somos, queremos guardar as nossas "coisas" nas gavetas equivalentes a elas. 
+
+Por que? Existem dois motivos. (1) Nós não queremos guardar coisas em gavetas demasiadamente grandes. Quando lidamos com computadores, normalmente temos um espaço limitado de memória e não queremos comprometê-la por um mau uso nosso. Ainda assim, isso não é um problema tão grave a não ser que você esteja lidando com bancos de dados muito grandes (com gigas de tamanho). Além disso, (2) quando vocês forem realizar análises estatísticas, o R trabalhará com os nossos dados de acordo com o tipo deles. É um pouco difícil de explicar esse segundo ponto sem entrar em detalhes e deixar todo mundo confuso, mas imagine [_dar um exemplo_]
+
+Quais são as variáveis mais comuns no R?
 
 - Double
-
-- Integer
 
 - Boolean
 
 - Character
 
+Existem outras, mas por padrão a gente trabalha com essas.
+
 ## 2.1. Double
 
-As variáveis double representam os números **reais**. Por padrão, o R guarda qualquer variável numérica como um *double*.
+As variáveis double representam os números **reais**. Por padrão, o R guarda qualquer variável numérica como um *double*. 
 
-Existe uma função no R muito útil para saber qual o tipo de uma variável. Ela se chama *typeof*. Para usá-la:
+Como sabemos o tipo de uma variável? Existe uma função no R muito útil para isso. Ela se chama *typeof*. Para usá-la:
 
-```{r}
-typeof(Variável)
-```
+Primeiro, vamos atribuir um valor a uma variável.
 
 ```{r}
-typeof(1) #Qual o tipo da variável 1?
+x <- 1
 ```
 
-## 2.2. Integer
+Repare que dessa vez eu não utilizei o sinal de igual (=). No R, podemos utilizar essa seta (<-) como equivalente do igual (=). De maneira geral, utilizamos a **<-** quando atribuímos um valor a uma variável. Deixamos o "=" para outras situações que veremos mais a frente.
 
-As variáveis de tipo float representam os números **inteiros**.
+Voltando, temos uma variável "x" com o valor 1. Quanto será o tipo dessa nossa variável?
 
-## 2.3. Boolean
+```{r}
+typeof(x)
+```
 
-De maneira geral, eles são consequências de testes de condição. Quando obtemos o 1, dizemos que esse teste foi verdadeiro. Quando obtemos o 0, dizemos que esse teste foi falso. 
+O que acontece quando atribuímos uma palavra como valor de uma variável
 
-As variáveis booleanas são normalmente utilizadas para controles de fluxo e, consequentemente, na automatização de tarefas.
+```{r}
+y <- "Oi" #Repare que é preciso utilizar aspas
+
+typeof(y)
+```
+
+O resultado, como era de se esperar, não é um _double_. Agora nós temos um _character_ e, consequentemente, outro tipo de variável do R.
+
+## 2.2. Character
+
+A variável *string* (texto) do R. Ela basicamente é uma variável para guardar textos. Normalmente nós não trabalhos com esse tipo de variável de "maneira pura". Ela normalmente está organizado de uma maneira específica, que chamamos de _factor_, mas isso só será apresentado quando trabalharmos com vetores.
+
+```{r}
+typeof("Hello World!")
+```
+
+## 2.3. Booleano
+
+Lembra quando testasmos se uma afirmação é verdadeira? O resultado dessas operações são as nossas variáveis booleanas. Como ela testa a 
 
 - Variável com dois valores: FALSE (0), TRUE (1)
 
@@ -149,13 +239,7 @@ Equações de tipo **or** são parecidas com a anterior, mas o resultado delas, 
 TRUE  | TRUE  | TRUE  |
 FALSE | TRUE | FALSE  |
 
-## 2.4. Character
 
-- A variável *string* do R. Ela basicamente é uma variável para guardar textos. Normalmente nós não trabalhos com esse tipo de variável em bancos de dados, mas caso você utilize o R para análises de texto, você trabalhará bastante com ela.
-
-```{r}
-typeof("Hello World!")
-```
 
 # 3. Estrutura dos Dados
 
