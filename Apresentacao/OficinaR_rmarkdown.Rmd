@@ -601,7 +601,6 @@ Podemos destar quatro partes principais
 Vamos ver um exemplo:
 
 ```{r}
-
 idade <- function(nasc, mort = 0){
 	if(mort != 0){
 		idade <- mort - nasc
