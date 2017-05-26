@@ -19,7 +19,7 @@ Acreditamos que ao ter um primeiro contato com a programação, o estudante pode
 
 # O que iremos aprender?
 
-Não trabalharemos aqui com análise de dados ou programação avançada. Iremos englobar assuntos básicos entre eles: [Temos que pensar o tempo da oficina]
+Não trabalharemos aqui com análise de dados ou programação avançada. Iremos englobar assuntos básicos entre eles: 
 
 - Ambiente do R; 
 
@@ -83,7 +83,7 @@ O R, antes de tudo, pode ser utilizado com uma calculadora. Experimente escrever
 
 Bom, já sabemos efetuar algumas operações. Mas como guardá-las? Para isso, utilizamos as variáveis. 
 
-Repare que no R nós utilizamos o sinal **<-** para atribuir valor a uma variável
+Repare que no R nós utilizamos o sinal `**<-**` para atribuir valor a uma variável
 
 ```{r}
 x <- 1 + 1
@@ -299,8 +299,6 @@ Em tese, podemos criar vetores com quaisquer tipos de variáveis. Contudo, essa 
 
 #Criando um vetor de 1 a 5 e guardando sob o nome "sequência"
 sequencia <- c(1,2,3,4,5) 
-
-
 ```
 
 Como o conjunto de dados possui uma ordem, podemos chamar cada um dos valores utilizando os colchetes "[]".
@@ -333,7 +331,7 @@ typeof(fator)
 levels(fator) <- c("Ótimo", "Bom" , "Regular" , "Ruim")
 ```
 
-Lembre-se que os valores contidos dentro de um vetor continuam sendo considerados *character*. Caso você use a função "typeof()".
+Lembre-se que os valores contidos dentro de um vetor continuam sendo considerados *character*. Caso você use a função `typeof()`.
 
 ## 3.2. Listas
 
