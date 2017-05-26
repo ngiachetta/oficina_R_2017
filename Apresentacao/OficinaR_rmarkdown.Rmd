@@ -322,7 +322,7 @@ Nós podemos falar para o R que os valores dentro dessa estrutura de dados possu
 Com isso, podemos trabalhar com dados categóricos no R. 
 
 ```{r}
-fator <-  c("Bom", "Ótimo", "Ruim", "Reguar")
+fator <-  c("Bom", "Ótimo", "Ruim", "Regular")
 
 typeof(fator) 
 
@@ -330,7 +330,7 @@ typeof(fator)
 
 #Primeiro a gente informa que a nossa variável possui níveis
 
-levels(fator) <- c("Ótimo", "Bom" , "Reguar" , "Ruim")
+levels(fator) <- c("Ótimo", "Bom" , "Regular" , "Ruim")
 ```
 
 Lembre-se que os valores contidos dentro de um vetor continuam sendo considerados *character*. Caso você use a função "typeof()".
