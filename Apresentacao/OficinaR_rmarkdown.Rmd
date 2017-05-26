@@ -581,7 +581,7 @@ Mas o que é uma função? Função nada mais é que um pedaço de código  que 
 Também podemos dizer que de uma forma geral, uma função é um objeto que recebe valores de entrada e retorna valores de saída.
 
 
-# 5.1 Definindo sua própria função
+### 5.1 Definindo sua própria função
 
 ```{r}
 minha_funcao <- function (arg1, arg2){
@@ -617,4 +617,7 @@ idade(nasc = 1997, mort = 0)
 
 idade(nasc = 1800, mort = 1886)
 ```
+### 5.2 Funções _built-in_ e pacotes
+
+Maior parte das tarefas que realizamos no R são com o auxilio de funções, principalmente aquelas que a linguagem tem como base, ou instalamos, conhecido como "pacotes". Em 31/03/2016 o R tinha cerca de 8125 pacotes disponíveis!!
 
