@@ -337,7 +337,7 @@ Lembre-se que os valores contidos dentro de um vetor continuam sendo considerado
 
 ## 3.2. Listas
 
-Vamos dizer que você queira guardar informações sobre um dos organizadores dessa disciplina. Uma das maneiras de se fazer isso é pelo uso de uma lista. Com ela, pomos guardar valores de diferentes tipos. Ao contrário do vetor, em que os dados precisam ser de mesmo tipo, com a lista não temos essa limitação.
+Vamos dizer que você queira guardar informações sobre um dos organizadores dessa disciplina. Uma das maneiras de se fazer isso é pelo uso de uma lista. Com ela, podemos guardar valores de diferentes tipos. Ao contrário do vetor, em que os dados precisam ser de mesmo tipo, com a lista não temos essa limitação.
 
 Por exemplo, um dos organizadores se chama Rafael. Ele tem 20 anos, 1,87 metros de altura e mora em São Paulo.
 
