@@ -33,15 +33,7 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 # 1. Ambiente do R - ESTA PARTE EU VOU COLOCAR NO SLIDE INICIAL, É MELHOR PARA APRESENTAR A FERRAMENTA
 
-R é uma linguagem de programação. Logo nós a utilizamos por meio de linhas de código. Ainda que isso, a princípio, pareça ser muito complicado; com o tempo, você se sentirá confortável em programar linhas e mais linhas.
-
-Uma das grandes vantagens do R é que ele é livre em todos os sentidos. Você pode baixá-lo sem pagar um centavo, ao mesmo tempo que, caso queira, pode ter acesso a toda a sua programação.
-
-Ao contrário de outros programas, ele não tem uma empresa por traz. Não temos a IBM nos dando suporte como no SPSS. Basicamente, quando baixamos o R, temos acesso meramente aos pacotes básicos. Caso você queira um função que não exista, o único jeito é correr atraz de pacote pronto ou programar você mesmo.
-
-Mas calma! De maneira geral, você não precisa passar dias programando cada uma das suas funções. Além daquelas que já vem no pacote básico (diga-se de passagem, já são mais do que suficientes para realizar diversos tipos de análise e tratamentos de dados), nós temos milhares de pacotes disponíveis totalmente de graça. Após ter uma noção básico do R, você provavelmente começará a utilizá-los.
-
-Contudo, antes disso, vamos nos familiarizar com a interface do R e aprender alguns comandos básicos. 
+R é uma linguagem de programação. Logo nós a utilizamos por meio de linhas de código. Ainda que isso, a princípio, pareça ser muito complicado; com o tempo, você se sentirá confortável em programar linhas e mais linhas. Primeiramente, vamos nos familiarizar com a interface do R e aprender alguns comandos básicos. 
 
 ## 1.1. O Console
 
@@ -650,5 +642,4 @@ idade(nasc = 1800, mort = 1886)
 ```
 ### 5.2 Funções _built-in_ e pacotes
 
-Maior parte das tarefas que realizamos no R são com o auxilio de funções, principalmente aquelas que a linguagem tem como base, ou instalamos, conhecido como "pacotes". Em 31/03/2016 o R tinha cerca de 8125 pacotes disponíveis!!
-
+Maior parte das tarefas que realizamos no R são com o auxilio de funções, principalmente aquelas que a linguagem tem como base (diga-se de passagem, já são mais do que suficientes para realizar diversos tipos de análise e tratamentos de dados), ou instalamos, conhecido como "pacotes". Em 31/03/2016 o R tinha cerca de 8125 pacotes disponíveis!!
