@@ -49,7 +49,7 @@ Como já dito, operamos o R por meio de um terminal. Caso você utilize o Window
 
 ![](terminal_r.png)
 
-Como você pode ver, não temos nada mais que um terminal. É possível também abrir um _script_ (janela da direita), mas vamos deixar isso para quando você já tiver um conhcimento mais razoável.
+Como você pode ver, não temos nada mais que um terminal. É possível também abrir um _script_ (janela da direita), mas vamos deixar isso para depois, quando você já tiver um conhcimento mais razoável.
 
 ## 1.2. O RStudio
 
@@ -65,7 +65,7 @@ Além do terminal, que se encontra por padrão na parte inferior esquerda, o RSt
 
 3. Abinha multifuncional: do lado inferior direito temos a nossa abinha multifuncional. Nela temos acesso a aba de ajudas, aos gráficos produzidos.
 
-# 2. Primeiros passos - NÃO!!! Sobretudo a segunda parte dá para discutir na seção de booleanos, não tem necessidade desse inicio. (Sugestão: colocar essa parte na atribuição ao objetvo, como por exemplo x <- 5 + 1; z <- 6/3...)
+# 2. Tipos de Variáveis
 
 Já temos alguma familiaridade com o R. Agora vamos tentar entender como ele funciona e como ele pode ser útil para as nossas análises.
 
@@ -81,61 +81,45 @@ O R, antes de tudo, pode ser utilizado com uma calculadora. Experimente escrever
 4 / 2 #Repare que o sinal de divisão é /
 ```
 
-Além disso, podemos testar se uma afirmação matemática é verdadeira. Por exemplo, 2 é maior que 4? 2 não é vamior que quatro. Logo a nossa afirmação é falsa.
+Bom, já sabemos efetuar algumas operações. Mas como guardá-las? Para isso, utilizamos as variáveis. 
 
-Experimente perguntar isso pro R.
-
-```{r}
-2 > 4
-
-#O que ocorre quando perguntamos se 2 é menor que 4?
-
-2 < 4
-
-3 > 3 #3 maior que 3
-
-3 >= 3 #3 maior ou igual a 3
-
-3 <= 3 #3 menor ou igual a 3
-
-3 == 3 #3 é igual a 3
-```
-
-Essas últimas equações não possuem como resposta um valor numérico. Na próxima seção trabalharemos um pouco sobre operações booleanas e veremos como tudo isso pode ser útil para a gente.
-
-Antes disso, repare que para testar uma igualdade nós utilizamos o dois sinais de igual "==". Por que não utilizar apenas um? Aqui a gente começa a trabalhar com a ideia de variável. Em poucas palavras, quando se utiliza apenas um, estamos atribuindo um valor a uma variável. Quando utilizamos dois, queremos testar se há uma igualdade entre o lado direito e o esquerdo do sinal.
+Repare que no R nós utilizamos o sinal **<-** para atribuir valor a uma variável
 
 ```{r}
-2 == 3 #2 é igual a 3?
+x <- 1 + 1
 
-x = 2 #Estamos falando para o R que a variável "x" possui o valor 2.
+y <- 3 * 2 #Repare que o sinal de vezes é *
+
+z <- 2 ^ 2 #Repare que isso é 2 ao quadrado
+
+w <- 4 / 2 #Repare que o sinal de divisão é /
 ```
 
-Percebeu a diferença? Se não, _don't panic_. Conforme formos discutindo os próximos assuntos isso provavelmente ficará mais claro.
+Acabamos de guardar cada uma das operações em variáveis "x", "y", "z" e "w".
 
-# 2. Tipos de Variáveis
-
-Bom, até agora já sabemos o que o R é e também já sabemos utilizar o R como uma calculadora[NAOOO!!]. Vamos agora aprender a "guardar" os nossos dados. Isso é relativamente muito simples. Basta associar uma determinada palavra com um valor. Por exemplo,
+Uma vez feito isso, caso você queira os resultados das operações, basta digitar no terminal "x", "y", "z" ou "w".
 
 ```{r}
-x <- 1
+x
+
+y
+
+z
+
+w
 ```
 
-Acabei de falar pro R guardar no "x" o valor 1. Podemos fazer isso com palavras
+Nós podemos guardar outras coisas, como palavras.
 
 ```{r}
-x <- "Hellor World!"
+palavra <- "Hellor World!" #Repare que é preciso utilizar aspas
 ```
 
-Agora, guardamos a frase "Hello World!" dentro da variável "x". Caso você queira, podemos "chamar" o valor de uma variável. Basta escrê-la
+Com a frase "Hello World!" dentro da variável "x". Escreva "x" no terminal e veja o que aparece.
 
-```{r}
-x 
-```
+Isso não parece muito difícil, não? Estamos apenas guardando números ou palavras dentro de variáveis. Mas qual a complicação envolvida nesse processo? Tentaremos explicar isso por meio de uma analogia. Toda vez que você atribui um valor a uma variavel é como se estivessemos guardando uma "coisa" dentro de uma gaveta. De maneira geral, como pessoas organizadas que somos, queremos guardar as nossas "coisas" nas gavetas equivalentes a elas.
 
-Isso não parece muito difícil, não? Mas qual a complicação envolvida nesse processo? Tentaremos explicar isso por meio de uma analogia. Toda vez que você atribui um valor a uma variavel é como se estivessemos guardando uma "coisa" dentro de uma gaveta. De maneira geral, como pessoas organizadas que somos, queremos guardar as nossas "coisas" nas gavetas equivalentes a elas. 
-
-Por que? Existem dois motivos. (1) Nós não queremos guardar coisas em gavetas demasiadamente grandes. Quando lidamos com computadores, normalmente temos um espaço limitado de memória e não queremos comprometê-la por um mau uso nosso. Ainda assim, isso não é um problema tão grave a não ser que você esteja lidando com bancos de dados muito grandes (com gigas de tamanho). Além disso, (2) quando vocês forem realizar análises estatísticas, o R trabalhará com os nossos dados de acordo com o tipo deles. É um pouco difícil de explicar esse segundo ponto sem entrar em detalhes e deixar todo mundo confuso, mas imagine [_dar um exemplo_]
+Por que? Existem dois motivos. (1) Nâo queremos utilizar gavetas grandes demais para "coisas" muito pequenas. Quando lidamos com computadores, temos um espaço limitado de memória e não queremos comprometê-la por um mau uso nosso. Ainda assim, isso não é um problema tão grave a não ser que você esteja lidando com bancos de dados muito grandes (com gigas de tamanho). Além disso, (2) quando vocês forem realizar análises estatísticas, o R trabalhará com os nossos dados de acordo com o tipo deles. Logo, dependendo da "gaveta" que você utilizou para guardar determinados valores, o R lhe oferecerá diferentes resultados.
 
 Quais são as variáveis mais comuns no R?
 
@@ -153,71 +137,102 @@ As variáveis double representam os números **reais**. Por padrão, o R guarda 
 
 Como sabemos o tipo de uma variável? Existe uma função no R muito útil para isso. Ela se chama *typeof*. Para usá-la:
 
-Primeiro, vamos atribuir um valor a uma variável.
+Você ainda lembra das nossas variáveis "x", "y", "z" e "w"? 
 
-```{r}
-x <- 1
-```
-
-Repare que dessa vez eu não utilizei o sinal de igual (=). No R, podemos utilizar essa seta (<-) como equivalente do igual (=). De maneira geral, utilizamos a **<-** quando atribuímos um valor a uma variável. Deixamos o "=" para outras situações que veremos mais a frente. __[O igual não é muito utilizado na linguagem quando atribuimos valores a variaveis, recomendo tirar essa parte, pois pode confundir as pessoas]__
-
-Voltando, temos uma variável "x" com o valor 1. Quanto será o tipo dessa nossa variável?
+Vamos ver qual o tipo dessas variáveis.
 
 ```{r}
 typeof(x)
-```
-
-O que acontece quando atribuímos uma palavra como valor de uma variável
-
-```{r}
-y <- "Oi" #Repare que é preciso utilizar aspas
 
 typeof(y)
+
+typeof(z)
+
+typeof(w)
+```
+
+
+## 2.2. Character
+
+E quando as nossas variáveis contêm palavras? Pouco tempo atrás nós atribuímos a frase "Hello World!" à variável "palavra".
+
+Vamos verificar qual o tipo dela.
+
+```{r}
+typeof(palavra)
 ```
 
 O resultado, como era de se esperar, não é um _double_. Agora nós temos um _character_ e, consequentemente, outro tipo de variável do R.
 
-## 2.2. Character
-
-A variável *string* (texto) do R. Ela basicamente é uma variável para guardar textos. Normalmente nós não trabalhos com esse tipo de variável de "maneira pura". Ela normalmente está organizado de uma maneira específica, que chamamos de _factor_, mas isso só será apresentado quando trabalharmos com vetores.
-
-```{r}
-typeof("Hello World!")
-```
+Trata-se da variável *string* (texto) do R. Ela basicamente é uma variável para guardar textos. Normalmente nós não trabalhos com esse tipo de variável de "maneira pura". Ela normalmente está organizado de uma maneira específica, que chamamos de _factor_, mas isso só será apresentado quando trabalharmos com vetores.
 
 ## 2.3. Booleano
 
-Lembra quando testasmos se uma afirmação é verdadeira?[Alterar aqui] O resultado dessas operações são as nossas variáveis booleanas. Como ela testa a 
+Até agora ou trabalhamos com operações ou com palavras, mas no R e em qualquer linguagem de programação nós podemos trabalhar com igualdades.
 
-- Variável com dois valores: FALSE (0), TRUE (1)
+Experimente perguntar para o R se 2 é maior que 4.
+
+```{r}
+2 > 4
+```
+
+Você recebeu um "FALSE" como resposta. Isso significa que 2 **não** é maior que 4. 
+
+Verifique as respostas de outras operações!
+
+```{r}
+2 < 4   #2 é menor que 4?
+
+3 > 3   #3 maior que 3?
+
+3 >= 3  #3 maior ou igual a 3?
+
+3 <= 3  #3 menor ou igual a 3?
+
+3 == 3  #3 é igual a 3?
+
+3 != 3  #3 é diferente de 3?
+```
+
+Como você deve ter percevido, nessas operações não recebemos um número como resposta. Recebemos apenas um resultado se a afirmação é verdadeira _(TRUE (1))_ ou falsa _(FALSE (0))_. Com isso, nós temos as nossas variáveis booleanas.
 
 ## 2.3.1. Operações Booleanas
 
-As variáveis booleanas são resultados de equações booleanas. Que equações são essas? Existem duas maneiras de operacionalizar essas equações. Podemos nos perguntar,(1) se duas afirmações são verdadeiras, ou (2) se pelo menos uma delas é verdadeira. No primeiro caso, temos as operações de tipo **and** ("e"). No segundo caso, temos as operações de tipo **or** ("ou").
+A partir das variáveis, podemos realizar duas operações específicas para elas.
+
+Por um lado, (1) podemos perguntar se duas afirmações são verdadeiras; por outro, (2) podemos perguntar se pelo menos uma delas é verdadeira. 
+
+No primeiro caso, temos as operações de tipo **and** ("e"). No segundo caso, temos as operações de tipo **or** ("ou").
 
 1. **And (&)**
 
-Queremos saber se dois testes são verdadeiros. O resultado dessa operação tem a seguinte lógica: necessariamente os dos lados devem ser verdadeiros para que a equações seja verdadeira. Caso contrário, ela é falsa.
-
-Por exemplo, imagine a seguinte frase: "2 é maior que 1 e 3 é maior que 2?". Provavelmente a sua resposta foi sim. Nesse caso, o valor booleano dessa operação é TRUE(1), ou VERDADEIRO(1).
-
-Antes de praticar, vamos fazer mais um exemplo. Agora vou escrever em matematiquês. "2 x 5 == 10 &(e) 3 x 3 > 10". Vamos por partes. Vamos olhar para a parte esquerda primeiro. Quanto é 2 x 5? 10. 10 é igual 10? Sim! Muito bem! A nossa parte esquerda é verdadeira. E a direita? 3 x 3 é 9. 9 é maior que 10? Não. Logo a parte direita da nossa equação é falsa. Como as operações de tipo **and** necessitam que os dois lados sejam verdadeiros, o resultado é que a nossa equação booleana é falsa.
-
-Como já sabemos a lógica, vamos praticar!
+Queremos saber se dois testes são verdadeiros. A forma geral desse teste é a seguinte:
 
 ```{r}
-#Vamos mandar o R fazer essa última equação para gente
-#Note que no R, o sinal de multiplicação é o *
-
-2 * 5 == 10 & 3 * 3 > 10 
-
-#Deseja treinar um pouco mais? Faça essas próximas de cabeça e depois peça para o R lhe mostrar o resultado.
-
-1 + 2 < 3 & 2 * 1 > 1
-
+TESTE1 & TESTE2 #Repare que utilizamos o & para simbolizar o "e"
 ```
 
-Os resultados de uma equação **and** podem ser observados na seguinte tabela.
+Podemos ler essa operação da seguinte maneira: "O 'TESTE1' é verdadeiro **e** o 'TESTE2' é verdadeiro". Dessa maneira, o resultado depende dos dois lados serem verdadeiros.
+
+Vamos ver um exemplo antes de ir pro R. Imagine a frase: "2 é maior que 1 **e** 3 é maior que 2?". Para se avaliar essa frase, primeiro separamos os lados da operação. Do lado direito temos "2 é maior que 1" e do esquerdo "3 é maior que 2". Tanto o lado esquerdo quanto o direito são verdadeiros. Logo temos algo parecido com "TRUE & TRUE". O resultado dessa operação é TRUE.
+
+Caso você tenha tido dificuldade, vamos pensar de maneira um pouco diferente. As operações de tipo **and** necessitam que os dois lados sejam verdadeiros. Logo se uma delas for falsa a operação resultado em um **FALSE**.
+
+Vamos para o R! Será que 2 vezes 5 é igual a 10 **e** 3 vezes 3 é menor que 10? (2 x 5 == 10 & 3 x 3 > 10). "2 x 5 == 10 & 3 x 3 > 10". 
+
+```{r}
+2 * 5 == 10 & 3 * 3 > 10 
+```
+
+Caso queira, podemos organizar a nossa operação com parênteses () para facilitar a leitura.
+
+```{r}
+(2 * 5 == 10) & (3 * 3 > 10)
+```
+
+Experimente mudar alguns dos valores e ver quais resultados nós obtemos. 
+
+Por fim, podemos pensar que os resultados das operações de tipo **and** seguem a seguinte tabela.
 
 ------|TRUE   |   FALSE|
 ------|-------|--------|
@@ -228,18 +243,36 @@ FALSE | FALSE | FALSE  |
 
 Equações de tipo **or** são parecidas com a anterior, mas o resultado delas, digamos assim, é mais "brando". Nessas equações, basta que uma das afirmações seja verdadeira para se obter um resultado verdadeiro.
 
-```{r}
-#10 é maior que 2 ou 2 é menor que 4?
+A forma geral do **or** é a seguinte:
 
-10 > 2 | 2 < 4
+```{r}
+TESTE1 | TESTE2
 ```
+
+Vamos direto para o R dessa vez. Será que 10 é maior que 2 ou 2 é menor que 4 (10 > 2 | 2 < 4)?
+
+```{r}
+(10 > 2) | (2 < 4)
+```
+
+Experimente criar outras operações!
+
+```{r}
+(10 > 2) | (2 < 4)
+
+(2 == 3) | (7 > 4)
+
+(2 != 3) | (2 < 4) 
+```
+
+Por fim, como as operações de tipo **or** são mais fáceis de dar **TRUE**.
+
+Observe a tabela com os possíveis resultados.
 
 ------|TRUE   |   FALSE|
 ------|-------|--------|
 TRUE  | TRUE  | TRUE  |
 FALSE | TRUE | FALSE  |
-
-
 
 # 3. Estrutura dos Dados
 
