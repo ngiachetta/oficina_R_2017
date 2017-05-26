@@ -65,7 +65,7 @@ Além do terminal, que se encontra por padrão na parte inferior esquerda, o RSt
 
 3. Abinha multifuncional: do lado inferior direito temos a nossa abinha multifuncional. Nela temos acesso a aba de ajudas, aos gráficos produzidos.
 
-# 2. Primeiros passos - NÃO!!! Sobretudo a segunda parte dá para discutir na seção de booleanos, não tem necessidade desse inicio.
+# 2. Primeiros passos - NÃO!!! Sobretudo a segunda parte dá para discutir na seção de booleanos, não tem necessidade desse inicio. (Sugestão: colocar essa parte na atribuição ao objetvo, como por exemplo x <- 5 + 1; z <- 6/3...)
 
 Já temos alguma familiaridade com o R. Agora vamos tentar entender como ele funciona e como ele pode ser útil para as nossas análises.
 
