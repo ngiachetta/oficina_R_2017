@@ -31,7 +31,7 @@ Não trabalharemos aqui com análise de dados ou programação avançada. Iremos
 
 - Funções.
 
-# 1. Ambiente do R - ESTA PARTE EU VOU COLOCAR NO SLIDE INICIAL, É MELHOR PARA APRESENTAR A FERRAMENTA
+# 1. Ambiente do R 
 
 R é uma linguagem de programação. Logo nós a utilizamos por meio de linhas de código. Ainda que isso, a princípio, pareça ser muito complicado; com o tempo, você se sentirá confortável em programar linhas e mais linhas. Primeiramente, vamos nos familiarizar com a interface do R e aprender alguns comandos básicos. 
 
