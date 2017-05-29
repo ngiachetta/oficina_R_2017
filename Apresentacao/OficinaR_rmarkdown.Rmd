@@ -643,3 +643,29 @@ idade(nasc = 1800, mort = 1886)
 ### 5.2 Funções _built-in_ e pacotes
 
 Maior parte das tarefas que realizamos no R são com o auxilio de funções, principalmente aquelas que a linguagem tem como base (diga-se de passagem, já são mais do que suficientes para realizar diversos tipos de análise e tratamentos de dados), ou instalamos, conhecido como "pacotes". Em 31/03/2016 o R tinha cerca de 8125 pacotes disponíveis!!
+
+Para sabermos quais funções fazem parte dos pacotes base do R, podemos escrever o seguinte comando: `base::` seguido da tecla "TAB" (Não precisa executar o comando)
+
+```{r}
+base::
+```
+
+### 5.2.1 Instalando os pacotes
+
+Antes de instalarmos os pacotes precisamos saber o que é o [CRAN](https://cran.r-project.org/). 
+
+> "The “Comprehensive R Archive Network” (CRAN) is a collection of sites which carry identical material, consisting of the R distribution(s), the contributed extensions, documentation for R, and binaries."
+
+Vamos então instalar e habilitar um pacote no R!
+
+```{r}
+install.packages("cowsay")
+
+library(cowsay)
+
+cowsay::say("Oficina de R", by ="shark" )
+
+# E se um animal falasse aleatóriamente cada filme presente do banco de dados "criticas"
+cowsay::say(what = sample(criticas$tituloV,size = 1))
+```
+
