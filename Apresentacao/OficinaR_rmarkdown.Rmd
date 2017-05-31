@@ -37,11 +37,11 @@ R é uma linguagem de programação. Logo nós a utilizamos por meio de linhas d
 
 ## 1.1. O Console
 
-Como já dito, operamos o R por meio de um terminal. Caso você utilize o Windows (Ruindows), ao baixar o R, será oferecido uma interface gráfica bem simples. 
+Como já dito, operamos o R por meio de um terminal. Caso você utilize o Windows, ao baixar o R, será oferecida uma interface gráfica bem simples. 
 
 ![](terminal_r.png)
 
-Como você pode ver, não temos nada mais que um terminal. É possível também abrir um _script_ (janela da direita), mas vamos deixar isso para depois, quando você já tiver um conhcimento mais razoável.
+Como você pode ver, não temos nada mais que um terminal. É possível também abrir um _script_ (janela da direita), mas vamos deixar isso para depois, quando você já tiver um maior conhecimento de programação.
 
 ## 1.2. O RStudio
 
@@ -61,7 +61,7 @@ Além do terminal, que se encontra por padrão na parte inferior esquerda, o RSt
 
 Já temos alguma familiaridade com o R. Agora vamos tentar entender como ele funciona e como ele pode ser útil para as nossas análises.
 
-O R, antes de tudo, pode ser utilizado com uma calculadora. Experimente escrever "1 + 1"
+Repare que é possível realizar algumas operações direto no terminal.
 
 ```{r}
 1 + 1
@@ -73,7 +73,7 @@ O R, antes de tudo, pode ser utilizado com uma calculadora. Experimente escrever
 4 / 2 #Repare que o sinal de divisão é /
 ```
 
-Bom, já sabemos efetuar algumas operações. Mas como guardá-las? Para isso, utilizamos as variáveis. 
+Dificilmente nós realizamos uma conta no terminal e a deixamos lá "solta". De maneira geral, nós sempre procuramos guardá-las em algum lugar. Para isso, utilizamos as variáveis. 
 
 Repare que no R nós utilizamos o sinal `**<-**` para atribuir valor a uma variável
 
@@ -89,7 +89,7 @@ w <- 4 / 2 #Repare que o sinal de divisão é /
 
 Acabamos de guardar cada uma das operações em variáveis "x", "y", "z" e "w".
 
-Uma vez feito isso, caso você queira os resultados das operações, basta digitar no terminal "x", "y", "z" ou "w".
+Uma vez feito isso, caso você queira os resultados, basta digitar no terminal "x", "y", "z" ou "w".
 
 ```{r}
 x
@@ -101,7 +101,7 @@ z
 w
 ```
 
-Nós podemos guardar outras coisas, como palavras.
+Não precisamos guardar apenas números. Podemos guardar outras coisas, como palavras.
 
 ```{r}
 palavra <- "Hellor World!" #Repare que é preciso utilizar aspas
@@ -109,9 +109,9 @@ palavra <- "Hellor World!" #Repare que é preciso utilizar aspas
 
 Com a frase "Hello World!" dentro da variável "x". Escreva "x" no terminal e veja o que aparece.
 
-Isso não parece muito difícil, não? Estamos apenas guardando números ou palavras dentro de variáveis. Mas qual a complicação envolvida nesse processo? Tentaremos explicar isso por meio de uma analogia. Toda vez que você atribui um valor a uma variavel é como se estivessemos guardando uma "coisa" dentro de uma gaveta. De maneira geral, como pessoas organizadas que somos, queremos guardar as nossas "coisas" nas gavetas equivalentes a elas.
+Isso não parece muito difícil, não? Estamos apenas guardando números ou palavras dentro de variáveis. Mas qual a complicação envolvida nesse processo? Tentaremos explicar isso por meio de uma analogia. Toda vez que você atribui um valor a uma variável é como se estivéssemos guardando uma "coisa" dentro de uma gaveta. De maneira geral, como pessoas organizadas que somos, queremos guardar as nossas "coisas" em gavetas apropriadas.
 
-Por que? Existem dois motivos. (1) Nâo queremos utilizar gavetas grandes demais para "coisas" muito pequenas. Quando lidamos com computadores, temos um espaço limitado de memória e não queremos comprometê-la por um mau uso nosso. Ainda assim, isso não é um problema tão grave a não ser que você esteja lidando com bancos de dados muito grandes (com gigas de tamanho). Além disso, (2) quando vocês forem realizar análises estatísticas, o R trabalhará com os nossos dados de acordo com o tipo deles. Logo, dependendo da "gaveta" que você utilizou para guardar determinados valores, o R lhe oferecerá diferentes resultados.
+Por que? Existem dois motivos. (1) Não queremos um "objeto" pequeno ocupando muito espaço por ter sido armazenado dentro de uma gaveta maior do que o necessário. Quando lidamos com computadores, temos um espaço limitado de memória e não queremos comprometê-la por um mau uso nosso. Ainda assim, isso não é um problema tão grave a não ser que você esteja lidando com bancos de dados muito grandes (com gigabytes). Além disso, (2) quando vocês forem realizar análises estatísticas, o R trabalhará com os nossos dados de acordo com o tipo deles. Logo, dependendo da "gaveta" que você utilizou para guardar determinados valores, o R lhe oferecerá diferentes resultados.
 
 Quais são as variáveis mais comuns no R?
 
@@ -186,7 +186,7 @@ Verifique as respostas de outras operações!
 3 != 3  #3 é diferente de 3?
 ```
 
-Como você deve ter percevido, nessas operações não recebemos um número como resposta. Recebemos apenas um resultado se a afirmação é verdadeira _(TRUE (1))_ ou falsa _(FALSE (0))_. Com isso, nós temos as nossas variáveis booleanas.
+Como você deve ter percebido, nessas operações não recebemos um número como resposta. Recebemos apenas um resultado se a afirmação é verdadeira _(TRUE (1))_ ou falsa _(FALSE (0))_. Com isso, nós temos as nossas variáveis booleanas.
 
 ## 2.3.1. Operações Booleanas
 
@@ -270,7 +270,7 @@ FALSE | TRUE | FALSE  |
 
 Até agora trabalhos como tipos de variáveis atômicos. Além de guardar resultados isolados em variáveis, nós podemos guardar conjuntos de variáveis. Quando fazemos isso, nós deixamos de trabalhar apenas com variáveis e passamos a trabalhar também com estruturas de dados.
 
-No R, nós temos 4 principais estruturas de dados:
+No R, nós temos 4 estruturas de dados principais:
 
 - Vetores
 
@@ -291,6 +291,8 @@ Em tese, podemos criar vetores com quaisquer tipos de variáveis. Contudo, essa 
 
 #Criando um vetor de 1 a 5 e guardando sob o nome "sequência"
 sequencia <- c(1,2,3,4,5) 
+
+sequencia_2 <- c(1, 2, "Oi", 4.2, TRUE)
 ```
 
 Como o conjunto de dados possui uma ordem, podemos chamar cada um dos valores utilizando os colchetes "[]".
@@ -327,21 +329,20 @@ Lembre-se que os valores contidos dentro de um vetor continuam sendo considerado
 
 ## 3.2. Listas
 
-Vamos dizer que você queira guardar informações sobre um dos organizadores dessa disciplina. Uma das maneiras de se fazer isso é pelo uso de uma lista. Com ela, podemos guardar valores de diferentes tipos. Ao contrário do vetor, em que os dados precisam ser de mesmo tipo, com a lista não temos essa limitação.
+Vamos dizer que você queira guardar informações sobre um dos organizadores dessa disciplina. Uma das maneiras de se fazer isso é pelo uso de uma lista. Ao contrário do vetor, em que os dados precisam ser de mesmo tipo, com a lista não temos essa limitação.
 
 Por exemplo, um dos organizadores se chama Rafael. Ele tem 20 anos, 1,87 metros de altura e mora em São Paulo.
 
 ```{r}
-#Uma lista com as informações de Rafael
-lista_r <- list(nome = "Rafael",
-                idade = 20,
-                altura = 1.87,
-                mora = "São Paulo") 
+#Uma lista com as informações de filmes
+lista_filmes <- list(nome = c("Coração Valente", "Tatuagem", "Central do Brasil"),
+                avaliacao = c(2,5,3),
+                classf = c("Aventura", "Drama", "Drama")) 
 ```
 
 Como você viu, outra vantagem da lista é que podemos dar "nomes" às variáveis. Logo nós podemos chamar o valor dela não só pela posição, mas também a partir desse "nome". Para isso, utilizamos o "$".
 
-Por exemplo, caso eu queira, o valores de uma lista guardados em "idade", podemos utilizar lista_r$idade. Contudo, nós também podemos chamar um valor de acordo com a posição que ele ocupa. A única diferença é que agora nós devemos utilizar dois colchetes ao invés de um "[[]]".
+Por exemplo, caso eu queira, o valores de uma lista guardados em "idade", podemos utilizar "lista_r$idade". Contudo, nós também podemos chamar um valor de acordo com a posição que ele ocupa. A única diferença é que agora nós devemos utilizar dois colchetes ao invés de um "[[]]".
 
 ```{r}
 #Para chamar um valor dentro da lista, ou chamamos pelo "nome" de sua posição, ou pela posição "i" que ele ocupa
@@ -366,7 +367,7 @@ Aprendemos a guardar valores em vetores e listas. Caso você já tenha trabalhad
 
 Antes de apresentar a maneira mais comum de trabalhar com bancos de dados no R, vamos trabalhar rapidamente com a ideia de matrizes. Ao contrário de vetores que se limitam a uma representação **unidimensional** dos dados, com as matrizes, podemos guardar informações de maneira **bidimensional**.
 
-Porém, assim, como os vatores, matrizes necessariamente guardam valores de mesmo tipo.
+Porém, assim, como os vetores, matrizes necessariamente guardam valores de mesmo tipo.
 
 Vamos ver um pouquinho disso na prática.
 
@@ -404,10 +405,9 @@ Ok, mas como vetores, listas e matrizes fazem parte de um Data Frame?
 1. Data frames podem ser representados por um tipo especial de lista em que cada elemento da lista tem o mesmo tamanho
 
 ```{r}
-filmes <- list(nome = c("Coração Valente", "Tatuagem", "Central do Brasil"), avaliacao = c(2,5,3), classf = c("Aventura", "Drama", "Drama"))
-
-df <- data.frame(filmes)
+filmes.df <- data.frame(lista_filmes)
 ```
+
 2. Também podemos simplificar, considerando um data frame como um conjunto de vetores de mesmo tamanho.
 
 ```{r}
@@ -449,6 +449,7 @@ criticas[1:10,11]
 # 4. Controladores de Fluxo
 
 Para essa seção iremos utilizar um banco de dados do Museu de Arte Moderna de Nova York (MoMa), porém, como conseguiremos extrair estes dados? Simples, no [github](https://github.com/) existe um repositório com as [coleções do Museu](https://github.com/MuseumofModernArt/collection). Para extrair estes dados, vamos utilizar a função `read.csv()`.
+
 ```{r}
 moma <- read.csv ("https://raw.githubusercontent.com/ngiachetta/oficina_R_2017/master/Material/MOMA_Oficina.csv",  header = TRUE, sep = ";", stringsAsFactors = FALSE)
 ```
@@ -492,7 +493,7 @@ Percebam que o comando _if_ realiza a condição apenas para casos não vetoriza
 
 ## 4.2 Loops com o for
 
-E se nós quiséssemos percorrer os primeiros 10 valores da coluna nacionalida do nosso banco de dados? Uma das soluções para isso é usar o for!
+E se nós quiséssemos percorrer os primeiros 10 valores da coluna nacionalidade do nosso banco de dados? Uma das soluções para isso é usar o for!
 
 ```{r}
 for (i in 1:10){
@@ -517,7 +518,7 @@ for (i in 1:10){
   print(moma$Classification[i])
 }
 ```
-É muito importante tomar cuidado com os símbolos que vocês colocam nos valores para realizar os loops. Se colocarmos símbolos em já existentes, o R vai sobreescrever o objeto existente com o que nós criamos.
+É muito importante tomar cuidado com os símbolos que vocês colocam nos valores para realizar os loops. Se colocarmos símbolos em já existentes, o R vai sobrescrever o objeto existente com o que nós criamos.
 
 ## 4.3 Loops com o while
 
@@ -613,7 +614,7 @@ minha_funcao <- function (arg1, arg2){
 ```
 Podemos destar quatro partes principais
 
-- função `function()` - Uma função que fornece so mecanismos basicos para definir novas funções na linguagem R 
+- função `function()` - Uma função que fornece só mecanismos básicos para definir novas funções na linguagem R 
 
 - Argumentos
 
@@ -633,6 +634,7 @@ idade <- function(nasc, mort = 0){
 	idade	
 }
 ```
+
 Quando nós rodamos a função acima, criamos um objeto chamado "idade". Isso significa que agora temos uma função para usar assim como as outras que já vimos até então.
 
 ```{r}
@@ -663,9 +665,30 @@ install.packages("cowsay")
 
 library(cowsay)
 
-cowsay::say("Oficina de R", by ="shark" )
+cowsay::say("Muito obrigado pela sua participação!", by ="shark" )
 
 # E se um animal falasse aleatóriamente cada filme presente do banco de dados "criticas"
 cowsay::say(what = sample(criticas$tituloV,size = 1))
 ```
 
+#6. Onde aprender R?
+
+Gostou do R? Quer saber mais? Nós aprendemos grande parte do que sabemos sozinhos a partir de materiais disponíveis **gratuitamente** na internet. Recomendamos muito que vocês se dediquem em casa para aprender! 
+
+Lembre-se programação só se aprende programando! Arranje um banco de dados e brinque com ele conforme aprender a mexer no R.
+
+1. [GitHub - Léo Barano](https://github.com/leobarone/FLS6397)
+
+2. [R for Data Science](http://r4ds.had.co.nz/)
+
+3. [Hands-On Programming with R](https://d1b10bmlvqabco.cloudfront.net/attach/ighbo26t3ua52t/igp9099yy4v10/igz7vp4w5su9/OReilly_HandsOn_Programming_with_R_2014.pdf)
+
+4. [Data Science - Coursera](https://pt.coursera.org/specializations/jhu-data-science)
+
+5. [DataCamp](https://www.datacamp.com/)
+
+6. Pacote Swirl - Disponível no CRAN
+
+Infelizmente são poucas as alternativas em português :(
+
+Repare que os cursos do _Coursera_ e do _Datacamp_ são pagos. No caso do _Cousera_, é possível acessar o conteúdo das aulas sem pagar. No caso do _Datacamp_, você tem acesso gratuito aos cursos introdutórios, mas para os mais avançados é preciso pagar uma mensalidade.
