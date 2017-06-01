@@ -602,8 +602,7 @@ Ao longo da oficina vimos algumas objetos que no R são chamados de funções, c
 
 Mas o que é uma função? Função nada mais é que um pedaço de código  que executa uma tarefa especifica. Ela pode nos ajudar em tarefas que exigem muita repetição de um mesmo código, por exemplo.
 
-Também podemos dizer que de uma forma geral, uma função é um objeto que recebe valores de entrada e retorna valores de saída.
-
+Também podemos dizer que, de uma forma geral, uma função é um objeto que recebe valores de entrada e retorna valores de saída.
 
 ### 5.1 Definindo sua própria função
 
@@ -642,6 +641,7 @@ idade(nasc = 1997, mort = 0)
 
 idade(nasc = 1800, mort = 1886)
 ```
+
 ### 5.2 Funções _built-in_ e pacotes
 
 Maior parte das tarefas que realizamos no R são com o auxilio de funções, principalmente aquelas que a linguagem tem como base (diga-se de passagem, já são mais do que suficientes para realizar diversos tipos de análise e tratamentos de dados), ou instalamos, conhecido como "pacotes". Em 31/03/2016 o R tinha cerca de 8125 pacotes disponíveis!!
@@ -681,7 +681,7 @@ Lembre-se programação só se aprende programando! Arranje um banco de dados e 
 
 2. [R for Data Science](http://r4ds.had.co.nz/)
 
-3. [Hands-On Programming with R](https://www.amazon.com/Hands-Programming-Write-Functions-Simulations/dp/1449359019)
+3. [Hands-On Programming with R](https://d1b10bmlvqabco.cloudfront.net/attach/ighbo26t3ua52t/igp9099yy4v10/igz7vp4w5su9/OReilly_HandsOn_Programming_with_R_2014.pdf)
 
 4. [Data Science - Coursera](https://pt.coursera.org/specializations/jhu-data-science)
 
