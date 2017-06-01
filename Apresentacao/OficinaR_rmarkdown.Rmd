@@ -689,6 +689,8 @@ Lembre-se programação só se aprende programando! Arranje um banco de dados e 
 
 6. Pacote Swirl - Disponível no CRAN
 
+7. [R para Cientistas Sociais (em Português!)](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf)
+
 Infelizmente são poucas as alternativas em português :(
 
 Repare que os cursos do _Coursera_ e do _Datacamp_ são pagos. No caso do _Cousera_, é possível acessar o conteúdo das aulas sem pagar. No caso do _Datacamp_, você tem acesso gratuito aos cursos introdutórios, mas para os mais avançados é preciso pagar uma mensalidade.
